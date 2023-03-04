@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>833102393471-pkd5gq5evmphspi0rhlbmdcbmg0n9t4d.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.833102393471-pkd5gq5evmphspi0rhlbmdcbmg0n9t4d</string>
+	<key>API_KEY</key>
+	<string>AIzaSyADvhmWqN20EB0o_a0EVazJ4jiGA2wsGtY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>833102393471</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.diabeticheroApp</string>
+	<key>PROJECT_ID</key>
+	<string>patient-management-b833e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>patient-management-b833e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:833102393471:ios:0f1e6f0cc40f6d8bc3cf4a</string>
+	<key>DATABASE_URL</key>
+	<string>https://patient-management-b833e-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
