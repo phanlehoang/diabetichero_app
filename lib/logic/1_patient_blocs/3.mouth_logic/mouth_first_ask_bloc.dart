@@ -21,21 +21,38 @@ class MouthFirstAskBloc extends FormBloc<String, String> {
   final clinicalSymptoms = TextFieldBloc(
     validators: [FieldBlocValidators.required],
   );
-  final thirsty = TextFieldBloc(
-    validators: [FieldBlocValidators.required],
+  final thirsty = SelectFieldBloc(
   );
-  final polyuria = TextFieldBloc(
-    validators: [FieldBlocValidators.required],
+  final polyuria = SelectFieldBloc(
   );
-  final weight = TextFieldBloc(
-    validators: [FieldBlocValidators.required],
+  final polydipsia = SelectFieldBloc(
+  );
+  final weightLoss = TextFieldBloc(
   );
 
-
-
+  MouthFirstAskBloc(this.mouthProcedureOnlineCubit){
+    addFieldBlocs(
+      fieldBlocs: [
+        fastingGlucose,
+        casualGlucose,
+        hba1c,
+        clinicalSymptoms,
+        thirsty,
+        polyuria,
+        polydipsia,
+        weightLoss,
+      ],
+    );
+  }
  
 
   @override
   void onSubmitting() async {
-    
+  
+
+  }   
 }
+
+
+
+
