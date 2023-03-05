@@ -3,13 +3,13 @@ import '../medical/4_regimen.dart';
 
 class MouthRegimen extends Regimen {
   List<String> healthConditions;
-  List<Map<String, dynamic>> symptoms;
+  Map<String, dynamic> symptoms;
   num weight;
   MouthRegimen({
     required this.symptoms,
     required DateTime beginTime,
     required String name,
-    required List<String> medicalActions,
+    required List<dynamic> medicalActions,
     required this.healthConditions,
     required this.weight,
   }) : super(
@@ -23,7 +23,7 @@ class MouthRegimen extends Regimen {
       weight: map['weight'],
       beginTime: map['beginTime'].toDate(),
       name: map['name'],
-      medicalActions: List<String>.from(map['medicalActions']),
+      medicalActions: List<dynamic>.from(map['medicalActions']),
       healthConditions: List<String>.from(map['healthConditions']),
     );
   }

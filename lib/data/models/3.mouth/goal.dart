@@ -1,4 +1,5 @@
 class Goal {
-  late final num glucose;
+  final num glucoseWillLessThan;
 
+  Goal({required this.glucoseWillLessThan});
 }

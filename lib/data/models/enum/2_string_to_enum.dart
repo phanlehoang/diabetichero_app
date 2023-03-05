@@ -49,18 +49,31 @@ class StringToEnum {
   //insulinType
   static InsulinType stringToInsulinType(String i) {
     switch (i) {
+      //slow
+      case 'Slow':
+        return InsulinType.Slow;
       case 'Glargine':
         return InsulinType.Glargine;
-      case 'Actrapid':
-        return InsulinType.Actrapid;
-      case 'NPH':
-        return InsulinType.NPH;
+      case 'levemir':
+        return InsulinType.levemir;
       case 'Lantus':
         return InsulinType.Lantus;
+      case 'NPH':
+        return InsulinType.NPH;
+      case 'Insulatard':
+        return InsulinType.Insulatard;
+      //fast
+      case 'fast':
+        return InsulinType.fast;
+
+      case 'Actrapid':
+        return InsulinType.Actrapid;
+      case 'novorapid':
+        return InsulinType.novorapid;
       case 'Unknown':
         return InsulinType.Unknown;
       default:
-        return InsulinType.Actrapid;
+        return InsulinType.Unknown;
     }
   }
 

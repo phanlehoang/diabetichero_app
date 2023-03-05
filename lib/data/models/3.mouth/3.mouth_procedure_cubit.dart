@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diabetichero_app/data/models/medical/1_medical_action.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../2_profile.dart';
@@ -40,7 +41,7 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
     return regimensRef.doc(docs.last.id);
   }
 
-  Future<void> addRegimen(MouthRegimen regimen) async {
+  Future<void> addMouthRegimen(MouthRegimen regimen) async {
     CollectionReference regimensRef = procedureRef.collection('regimens');
     try {
       await regimensRef.doc(regimen.beginTime.toString()).set(regimen.toMap());
@@ -49,5 +50,25 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
     }
   }
 
-  Future<void> updateProcedureStatus(MouthProcedureStatus status) async {}
+  Future<void> addMedicalAction(dynamic medicalAction) async {
+    DocumentReference? lastRegimenRef = await this.lastRegimenRef;
+    if (lastRegimenRef == null) {
+    } else {
+      try {
+        await lastRegimenRef.update({
+          'medicalActions': FieldValue.arrayUnion([medicalAction.toMap()])
+        });
+      } catch (e) {
+        print(e);
+      }
+    }
+  }
+
+  Future<void> updateProcedureStatus(MouthProcedureStatus status) async {
+    try {
+      await procedureRef.update({'status': EnumToString.enumToString(status)});
+    } catch (e) {
+      print(e);
+    }
+  }
 }

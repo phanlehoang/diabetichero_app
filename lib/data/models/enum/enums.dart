@@ -43,9 +43,18 @@ enum RegimenStatus {
 }
 
 enum InsulinType {
+  //slow
   Glargine,
-  Actrapid,
-  NPH,
+  levemir,
   Lantus,
+  NPH,
+  Insulatard,
+  Slow,
+
+  //fast
+  Actrapid,
+  novorapid,
+  fast,
+
   Unknown,
 }

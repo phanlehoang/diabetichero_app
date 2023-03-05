@@ -37,13 +37,14 @@ class MouthScreen extends StatelessWidget {
             ),
           ],
         ),
-        BlocBuilder(
-          bloc: mouthProcedureOnlineCubit,
-          builder: (context, state) {
-            final st = state as MouthProcedure;
-            return Text(st.toString());
-          },
-        ),
+        //in ra trạng thái của bệnh nhân
+        // BlocBuilder(
+        //     bloc: mouthProcedureOnlineCubit,
+        //     builder: (ct, state) {
+        //       return Text(
+        //         'Trạng thái: ${mouthProcedureOnlineCubit.state.toString()}',
+        //       );
+        //     }),
         MouthStatusWidget(mouthProcedureOnlineCubit: mouthProcedureOnlineCubit)
       ],
     );
