@@ -19,7 +19,6 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
               : DateTime.now(),
           status: MouthProcedureStatus.loading,
           name: 'MouthProcedure',
-          weight: profile.weight,
           regimens: [],
         ));
   DocumentReference get procedureRef {

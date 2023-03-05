@@ -2,7 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diabetichero_app/data/models/2.TPN/3_TPN_procedure_online_cubit.dart';
 import 'package:diabetichero_app/logic/status_cubit/time_check/time_check_cubit.dart';
-import 'package:diabetichero_app/presentation/screens/1_patient_screens/tpn_screens/tpn_fast_insulin/tpn_give_fast_insulin_widget.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/tpn_fast_insulin/tpn_give_fast_insulin_widget.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

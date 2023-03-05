@@ -18,6 +18,8 @@ class StringToEnum {
         return ProcedureType.TPN;
       case 'Sonde':
         return ProcedureType.Sonde;
+      case 'Mouth':
+        return ProcedureType.Mouth;
       default:
         return ProcedureType.Unknown;
     }

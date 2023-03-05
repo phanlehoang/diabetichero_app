@@ -29,7 +29,6 @@ class MouthProcedureOnlineCubit extends MouthProcedureCubit {
         status: state.status,
         regimens: regimens,
         name: state.name,
-        weight: state.weight,
       ));
     });
     procedureStateSubscription = procedureRef.snapshots().listen((event) {
@@ -41,7 +40,6 @@ class MouthProcedureOnlineCubit extends MouthProcedureCubit {
           status: MouthProcedureStatus.loading,
           regimens: state.regimens,
           name: 'không có data',
-          weight: 0,
         ));
         return;
       }
@@ -50,7 +48,6 @@ class MouthProcedureOnlineCubit extends MouthProcedureCubit {
       emit(MouthProcedure(
         beginTime: state.beginTime,
         status: status,
-        weight: data['weight'],
         name: data['name'],
         regimens: state.regimens,
       ));

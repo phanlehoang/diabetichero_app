@@ -3,11 +3,15 @@ import '../medical/4_regimen.dart';
 
 class MouthRegimen extends Regimen {
   List<String> healthConditions;
+  List<Map<String, dynamic>> symptoms;
+  num weight;
   MouthRegimen({
+    required this.symptoms,
     required DateTime beginTime,
     required String name,
     required List<String> medicalActions,
     required this.healthConditions,
+    required this.weight,
   }) : super(
           beginTime: beginTime,
           name: name,
@@ -15,6 +19,8 @@ class MouthRegimen extends Regimen {
         );
   factory MouthRegimen.fromMap(Map<String, dynamic> map) {
     return MouthRegimen(
+      symptoms: map['symptoms'],
+      weight: map['weight'],
       beginTime: map['beginTime'].toDate(),
       name: map['name'],
       medicalActions: List<String>.from(map['medicalActions']),
@@ -23,6 +29,8 @@ class MouthRegimen extends Regimen {
   }
   Map<String, dynamic> toMap() {
     return {
+      'symptoms': symptoms,
+      'weight': weight,
       'beginTime': beginTime,
       'name': name,
       'medicalActions': medicalActions,

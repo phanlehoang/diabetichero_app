@@ -1,20 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/data_provider/sonde_provider/sonde_state_provider.dart';
-import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/1.sonde/sonde_lib.dart';
-import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';
-import 'package:diabetichero_app/presentation/widgets/vietnamese/vietnamese_field_bloc_validators.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../../data/models/1.sonde/7.2_sonde_procedure_online_cubit.dart';
+import '../../../../data/models/medical/6_procedure_state.dart';
+import '../../../../logic/1_patient_blocs/2.tpn_logic/tpn_first_ask_bloc.dart';
 import '../../../widgets/nice_widgets/1_nice_container.dart';
 import '../../../widgets/nice_widgets/2_nice_button.dart';
 
-class FirstAskWidget extends StatelessWidget {
+class TPNFirstAskWidget extends StatelessWidget {
   final procedureOnlineCubit;
-  const FirstAskWidget({
+  const TPNFirstAskWidget({
     Key? key,
     required this.procedureOnlineCubit,
   }) : super(key: key);
@@ -30,14 +25,14 @@ class FirstAskWidget extends StatelessWidget {
         //   },
         // ),
         //first ask form
-        BlocProvider<FirstAskBloc>(
-            create: (context) => FirstAskBloc(
+        BlocProvider<TPNFirstAskBloc>(
+            create: (context) => TPNFirstAskBloc(
                   procedureOnlineCubit: procedureOnlineCubit,
                 ),
             child: Builder(
               builder: (context) {
-                final formBloc = context.read<FirstAskBloc>();
-                return FormBlocListener<FirstAskBloc, String, String>(
+                final formBloc = context.read<TPNFirstAskBloc>();
+                return FormBlocListener<TPNFirstAskBloc, String, String>(
                   onSubmitting: (context, state) => Center(
                     child: CircularProgressIndicator(),
                   ),
@@ -65,11 +60,6 @@ class FirstAskWidget extends StatelessWidget {
                           itemBuilder: (context, value) =>
                               FieldItem(child: Text(value)),
                         ),
-                        Text('Nhập lượng CHO (g)'),
-                        TextFieldBlocBuilder(
-                          textFieldBloc: formBloc.getCHO,
-                          keyboardType: TextInputType.number,
-                        ),
                         NiceButton(
                           onTap: formBloc.submit,
                           text: 'Tiếp tục',
@@ -82,46 +72,5 @@ class FirstAskWidget extends StatelessWidget {
             ))
       ],
     );
-  }
-}
-
-class FirstAskBloc extends FormBloc<String, String> {
-  final procedureOnlineCubit;
-  final yesOrNoInsulin = SelectFieldBloc(
-    items: ['Có', 'Không'],
-    validators: [VietnameseFieldBlocValidators.required],
-  );
-  final getCHO = TextFieldBloc(
-    validators: [VietnameseFieldBlocValidators.required],
-  );
-
-  FirstAskBloc({
-    required this.procedureOnlineCubit,
-  }) {
-    addFieldBlocs(
-      fieldBlocs: [
-        yesOrNoInsulin,
-        getCHO,
-      ],
-    );
-  }
-
-  @override
-  void onSubmitting() async {
-    print('onSubmitting');
-    ProcedureStatus sondeStatus = yesOrNoInsulin.value == 'Yes'
-        ? ProcedureStatus.yesInsulin
-        : ProcedureStatus.noInsulin;
-    //update sonde status
-    try {
-      await procedureOnlineCubit.updateProcedureStateStatus(ProcedureState(
-        status: sondeStatus,
-        cho: num.parse(getCHO.value),
-        weight: procedureOnlineCubit.profile.weight,
-      ));
-    } catch (e) {
-      emitFailure(failureResponse: e.toString());
-    }
-    emitSuccess();
   }
 }

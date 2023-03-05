@@ -3,10 +3,9 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diabetichero_app/data/data_provider/sonde_provider/sonde_state_provider.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/tpn_fast_insulin/tpn_fast_insulin_widget.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/tpn_slow_insulin/tpn_slow_insulin.dart';
 
-import 'package:diabetichero_app/presentation/screens/1_patient_screens/tpn_screens/tpn_fast_insulin/tpn_fast_insulin_widget.dart';
-import 'package:diabetichero_app/presentation/screens/1_patient_screens/tpn_screens/tpn_mixing/1_tpn_mixing_widget.dart';
-import 'package:diabetichero_app/presentation/screens/1_patient_screens/tpn_screens/tpn_slow_insulin/tpn_slow_insulin.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';

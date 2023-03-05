@@ -61,7 +61,6 @@ class CreateProcedureFormBloc extends FormBloc<String, String> {
           beginTime: DateTime.now(),
           name: 'MouthProcedure',
           status: MouthProcedureStatus.firstAsk,
-          weight: profile.weight,
           regimens: []);
       var addProcedure = await PatientRef.getPatientRef(profile)
           .collection('procedures')

@@ -2,7 +2,7 @@ import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/logic/status_cubit/time_check/time_check_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/TPN_screens/1_TPN_status_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';
-import 'package:diabetichero_app/presentation/screens/1_patient_screens/tpn_screens/tpn_mixing/1_tpn_mixing_widget.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/tpn_mixing/1_tpn_mixing_widget.dart';
 import 'package:diabetichero_app/presentation/widgets/images/doctor_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

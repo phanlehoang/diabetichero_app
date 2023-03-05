@@ -1,23 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/data_provider/sonde_provider/sonde_state_provider.dart';
-import 'package:diabetichero_app/data/models/2.TPN/2_TPN_procedure_init.dart';
-import 'package:diabetichero_app/data/models/2.TPN/3_TPN_procedure_online_cubit.dart';
-import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';
-import 'package:diabetichero_app/presentation/widgets/vietnamese/vietnamese_field_bloc_validators.dart';
+import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../../../data/models/medical/6_procedure_state.dart';
+import '../../../../logic/1_patient_blocs/2.tpn_logic/tpn_first_ask_bloc.dart';
 import '../../../widgets/nice_widgets/1_nice_container.dart';
 import '../../../widgets/nice_widgets/2_nice_button.dart';
 
-class TPNFirstAskWidget extends StatelessWidget {
-  final procedureOnlineCubit;
-  const TPNFirstAskWidget({
+class MouthFirstAskWidget extends StatelessWidget {
+  final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
+  const MouthFirstAskWidget({
     Key? key,
-    required this.procedureOnlineCubit,
+    required this.mouthProcedureOnlineCubit,
   }) : super(key: key);
 
   @override
@@ -32,8 +27,8 @@ class TPNFirstAskWidget extends StatelessWidget {
         // ),
         //first ask form
         BlocProvider<TPNFirstAskBloc>(
-            create: (context) => TPNFirstAskBloc(
-                  procedureOnlineCubit: procedureOnlineCubit,
+            create: (context) => MouthFirstAskBloc(
+                  procedureOnlineCubit: mouthProcedureOnlineCubit,
                 ),
             child: Builder(
               builder: (context) {
@@ -78,45 +73,5 @@ class TPNFirstAskWidget extends StatelessWidget {
             ))
       ],
     );
-  }
-}
-
-class TPNFirstAskBloc extends FormBloc<String, String> {
-  final TPNProcedureOnlineCubit procedureOnlineCubit;
-  final yesOrNoInsulin = SelectFieldBloc(
-    items: ['Có', 'Khôngc'],
-    validators: [VietnameseFieldBlocValidators.required],
-  );
-
-  TPNFirstAskBloc({
-    required this.procedureOnlineCubit,
-  }) {
-    addFieldBlocs(
-      fieldBlocs: [
-        yesOrNoInsulin,
-      ],
-    );
-  }
-
-  @override
-  void onSubmitting() async {
-    print('onSubmitting');
-    num weight = procedureOnlineCubit.profile.weight;
-    ProcedureState procedureState = ProcedureState(
-      status: yesOrNoInsulin.value == 'Yes'
-          ? ProcedureStatus.yesInsulin
-          : ProcedureStatus.noInsulin,
-      slowInsulinType: InsulinType.Lantus,
-      weight: weight,
-    );
-    //update sonde status
-    try {
-      await procedureOnlineCubit.updateProcedureStateStatus(
-        procedureState,
-      );
-    } catch (e) {
-      emitFailure(failureResponse: e.toString());
-    }
-    emitSuccess();
   }
 }
