@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import '../medical/2.5_list_medical_from_list_map.dart';
 import '../medical/4_regimen.dart';
 
 class MouthRegimen extends Regimen {
@@ -17,13 +18,25 @@ class MouthRegimen extends Regimen {
           name: name,
           medicalActions: medicalActions,
         );
+  //toString
+  @override
+  String toString() {
+    return '''
+     MouthRegimen{symptoms: $symptoms,
+      weight: $weight, beginTime: $beginTime, 
+      name: $name,
+       medicalActions: $medicalActions,
+       healthConditions: $healthConditions}''';
+  }
+
   factory MouthRegimen.fromMap(Map<String, dynamic> map) {
     return MouthRegimen(
       symptoms: map['symptoms'],
       weight: map['weight'],
       beginTime: map['beginTime'].toDate(),
       name: map['name'],
-      medicalActions: List<dynamic>.from(map['medicalActions']),
+      medicalActions:
+          ListMedicalFromListMap.medicalActions(map['medicalActions']),
       healthConditions: List<String>.from(map['healthConditions']),
     );
   }

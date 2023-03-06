@@ -15,15 +15,13 @@ class MouthSlowInsulinIsDone {
   MouthSlowInsulinIsDone({required this.mouthProcedure});
 
   DateTime get lastSlowInsulinTime {
-    DateTime lastTime = DateTime(1999);
+    dynamic lastTime = DateTime(1999);
     int regimensLength = mouthProcedure.regimens.length;
     for (int i = 0; i < regimensLength; i++) {
       for (dynamic x in mouthProcedure.regimens[i].medicalActions) {
         if (!(x is MedicalTakeInsulin)) continue;
         if (!(slowInsulinTypes.contains(x.insulinType))) continue;
-        if (x.time.isBefore(lastTime)) {
-          lastTime = x.time;
-        }
+        if (x.time.isAfter(lastTime)) lastTime = x.time;
       }
     }
     return lastTime;

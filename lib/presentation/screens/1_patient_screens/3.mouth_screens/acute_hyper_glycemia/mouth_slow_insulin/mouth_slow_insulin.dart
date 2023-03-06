@@ -53,9 +53,11 @@ class MouthSlowInsulin extends StatelessWidget {
               if (isDone)
                 return Column(
                   children: [
-                    Text(MouthSlowInsulinIsDone(mouthProcedure: mouthProcedure)
-                        .lastSlowInsulinTime
-                        .toString()),
+                    //in ra các regimen của mouth procedure đang được thực hiện
+                    // Text(mouthProcedure.regimens.toString()),
+                    // Text(MouthSlowInsulinIsDone(mouthProcedure: mouthProcedure)
+                    //     .lastSlowInsulinTime
+                    //     .toString()),
                     Text(
                         MouthSlowInsulinRange().waitingMessage(DateTime.now())),
                   ],
