@@ -6,9 +6,10 @@ import 'package:equatable/equatable.dart';
 
 import '../time_controller/1_medical_range.dart';
 import '../time_controller/2_sonde_range.dart';
-import '2.5_list_medical_from_list_map.dart';
-import '2_medical_check_glucose.dart';
-import '3_medical_take_insulin.dart';
+
+import 'medical_action/2.5_list_medical_from_list_map.dart';
+import 'medical_action/2_medical_check_glucose.dart';
+import 'medical_action/3_medical_take_insulin.dart';
 
 class Regimen extends Equatable {
   //1. attributes

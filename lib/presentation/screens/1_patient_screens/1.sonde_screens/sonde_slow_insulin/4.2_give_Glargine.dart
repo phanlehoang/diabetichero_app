@@ -1,6 +1,6 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/data/models/glucose-insulin_controller/sonde_slow_insulin_solve.dart';
-import 'package:diabetichero_app/data/models/medical/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
 import 'package:diabetichero_app/data/models/time_controller/2_sonde_range.dart';
 import 'package:diabetichero_app/logic/1_patient_blocs/medical_blocs/sonde_blocs/check_insulin_submit_bloc.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';

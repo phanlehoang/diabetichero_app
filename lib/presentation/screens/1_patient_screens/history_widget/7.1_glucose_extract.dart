@@ -1,7 +1,7 @@
-import 'package:diabetichero_app/data/models/medical/2_medical_check_glucose.dart';
 import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
 
 import '../../../../data/models/medical/7_medical_procedure.dart';
+import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
 
 class GlucoseExtract {
   static List<MedicalCheckGlucose> fromRegimen(Regimen regimen) {
@@ -10,7 +10,7 @@ class GlucoseExtract {
 
   //from Medical Procedure
   static List<MedicalCheckGlucose> fromMedicalProcedure(
-      MedicalProcedure medicalProcedure) {
+      dynamic medicalProcedure) {
     List<MedicalCheckGlucose> medicalCheckGlucoses = [];
     for (var regimen in medicalProcedure.regimens) {
       medicalCheckGlucoses.addAll(regimen.medicalCheckGlucoses);

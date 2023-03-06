@@ -54,8 +54,8 @@ class StringToEnum {
         return InsulinType.Slow;
       case 'Glargine':
         return InsulinType.Glargine;
-      case 'levemir':
-        return InsulinType.levemir;
+      case 'Levemir':
+        return InsulinType.Levemir;
       case 'Lantus':
         return InsulinType.Lantus;
       case 'NPH':
@@ -63,15 +63,14 @@ class StringToEnum {
       case 'Insulatard':
         return InsulinType.Insulatard;
       //fast
-      case 'fast':
-        return InsulinType.fast;
+      case 'Fast':
+        return InsulinType.Fast;
 
       case 'Actrapid':
         return InsulinType.Actrapid;
-      case 'novorapid':
-        return InsulinType.novorapid;
-      case 'Unknown':
-        return InsulinType.Unknown;
+      case 'NovoRapid':
+        return InsulinType.NovoRapid;
+
       default:
         return InsulinType.Unknown;
     }
@@ -90,6 +89,8 @@ class StringToEnum {
         return MouthProcedureStatus.secondAsk;
       case 'hypoglycemia':
         return MouthProcedureStatus.hypoglycemia;
+      case 'thirdAsk':
+        return MouthProcedureStatus.thirdAsk;
       case 'baseBolus':
         return MouthProcedureStatus.baseBolus;
       case 'endocrineConference':

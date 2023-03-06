@@ -1,12 +1,6 @@
+import '../enum/enums.dart';
 import '../medical/4_regimen.dart';
 import '../medical/6_procedure_state.dart';
-
-enum GlucoseEvaluation {
-  normal,
-  high,
-  low,
-  superHigh,
-}
 
 class GlucoseSolve {
   static GlucoseEvaluation eval(num glucose) {

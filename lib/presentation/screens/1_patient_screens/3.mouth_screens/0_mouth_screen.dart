@@ -8,6 +8,7 @@ import 'package:nice_buttons/nice_buttons.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../widgets/images/doctor_image.dart';
+import '../history_widget/8_mouth_history_screen.dart';
 
 class MouthScreen extends StatelessWidget {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
@@ -27,7 +28,15 @@ class MouthScreen extends StatelessWidget {
             DoctorImage(),
             //button to history
             NiceButtons(
-              onTap: (f) {},
+              onTap: (f) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => MouthHistoryScreen(
+                              mouthProcedureOnlineCubit:
+                                  mouthProcedureOnlineCubit,
+                            )));
+              },
               stretch: false,
               width: 50,
               endColor: Colors.yellow,
@@ -37,6 +46,7 @@ class MouthScreen extends StatelessWidget {
             ),
           ],
         ),
+
         //in ra trạng thái của bệnh nhân
         // BlocBuilder(
         //     bloc: mouthProcedureOnlineCubit,

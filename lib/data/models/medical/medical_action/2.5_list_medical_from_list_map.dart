@@ -1,66 +1,57 @@
-
-
-
-
 import '2.1_medical_mixing.dart';
 import '2_medical_check_glucose.dart';
 import '3_medical_take_insulin.dart';
+import '4_medical_meal.dart';
 
-class ListMedicalFromListMap{
-  static List<MedicalCheckGlucose> medicalCheckGlucoses(List<dynamic>? listMap){
+class ListMedicalFromListMap {
+  static List<MedicalCheckGlucose> medicalCheckGlucoses(
+      List<dynamic>? listMap) {
     if (listMap == null) return [];
     List<MedicalCheckGlucose> ans = [];
-    for (Map<String,dynamic> x in listMap) {
-      try{
+    for (Map<String, dynamic> x in listMap) {
+      try {
         ans.add(MedicalCheckGlucose.fromMap(x));
-      }catch(e){
+      } catch (e) {
         continue;
       }
-
     }
     return ans;
   }
+
   //listMap to list of MedicalTakeInsulin
-  static List<MedicalTakeInsulin> medicalTakeInsulins(List<dynamic >?
-   listMap){
+  static List<MedicalTakeInsulin> medicalTakeInsulins(List<dynamic>? listMap) {
     if (listMap == null) return [];
     List<MedicalTakeInsulin> ans = [];
-    for (Map<String,dynamic> x in listMap) {
-      try{
+    for (Map<String, dynamic> x in listMap) {
+      try {
         ans.add(MedicalTakeInsulin.fromMap(x));
-      }catch(e){
+      } catch (e) {
         continue;
       }
-
     }
     return ans;
   }
-  static List<dynamic> medicalActions(List<dynamic>? listMap){
-    
+
+  static List<dynamic> medicalActions(List<dynamic>? listMap) {
     if (listMap == null) return [];
     List<dynamic> ans = [];
-    for (Map<String,dynamic> x in listMap) {
-      try{
+    for (Map<String, dynamic> x in listMap) {
+      try {
         if (x['name'] == 'MedicalCheckGlucose')
           ans.add(MedicalCheckGlucose.fromMap(x));
         else if (x['name'] == 'MedicalTakeInsulin')
           ans.add(MedicalTakeInsulin.fromMap(x));
-        else if(x['name'] == 'MedicalMixing')
+        else if (x['name'] == 'MedicalMixing')
           ans.add(MedicalMixing.fromMap(x));
+        else if (x['name'] == 'MedicalMeal')
+          ans.add(MedicalMeal.fromMap(x));
         else {
           continue;
         }
-      }catch(e){
+      } catch (e) {
         continue;
       }
-
     }
     return ans;
   }
 }
-
-
-
-
-
-

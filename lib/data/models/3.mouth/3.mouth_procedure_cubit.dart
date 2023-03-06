@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/medical/1_medical_action.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../2_profile.dart';

@@ -29,6 +29,7 @@ enum MouthProcedureStatus {
   acuteHyperglycemia, //tăng đường huyết cấp tính
   secondAsk,
   hypoglycemia, //bị hạ đường huyết
+  thirdAsk,
   baseBolus,
   endocrineConference, //hội chẩn nội tiết
   finish,
@@ -42,10 +43,18 @@ enum RegimenStatus {
   done,
 }
 
+enum GlucoseEvaluation {
+  normal,
+  high,
+  low,
+  superHigh,
+  extremelyHigh,
+}
+
 enum InsulinType {
   //slow
   Glargine,
-  levemir,
+  Levemir,
   Lantus,
   NPH,
   Insulatard,
@@ -53,8 +62,8 @@ enum InsulinType {
 
   //fast
   Actrapid,
-  novorapid,
-  fast,
+  NovoRapid,
+  Fast,
 
   Unknown,
 }

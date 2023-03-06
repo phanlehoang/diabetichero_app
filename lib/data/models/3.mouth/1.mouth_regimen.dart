@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import '../medical/2.5_list_medical_from_list_map.dart';
 import '../medical/4_regimen.dart';
+import '../medical/medical_action/2.5_list_medical_from_list_map.dart';
 
 class MouthRegimen extends Regimen {
   List<String> healthConditions;

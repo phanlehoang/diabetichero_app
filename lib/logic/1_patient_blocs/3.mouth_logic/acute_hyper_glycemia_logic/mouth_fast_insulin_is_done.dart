@@ -2,14 +2,15 @@ import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
-import '../../../../data/models/medical/2_medical_check_glucose.dart';
-import '../../../../data/models/medical/3_medical_take_insulin.dart';
+import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
+import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'mouth_take_meal_guide.dart';
 
 class MouthFastInsulinIsDone {
   List<InsulinType> FastInsulinTypes = [
     //Actrapid và novorapid
     InsulinType.Actrapid,
-    InsulinType.novorapid,
+    InsulinType.NovoRapid,
   ];
   final MouthProcedure mouthProcedure;
 
@@ -39,6 +40,12 @@ class MouthFastInsulinIsDone {
       }
     }
     return lastTime;
+  }
+
+  bool isMealDone() {
+    //lấy last meal time từ mouth take meal guide
+    final logicTakeMeal = MouthTakeMealGuide(mouthProcedure: mouthProcedure);
+    return logicTakeMeal.isDone;
   }
 
   bool get isGlucoseDone {

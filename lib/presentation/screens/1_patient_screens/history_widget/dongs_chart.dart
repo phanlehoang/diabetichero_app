@@ -2,7 +2,7 @@ import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../../../data/models/medical/2_medical_check_glucose.dart';
+import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
 
 class DongChart extends StatelessWidget {
   final List<MedicalCheckGlucose> medicalCheckGlucoses;

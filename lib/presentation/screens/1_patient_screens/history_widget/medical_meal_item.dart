@@ -1,28 +1,26 @@
+import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/medical/medical_action/4_medical_meal.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/enum/1_enum_to_string.dart';
-import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
 import '../../../widgets/nice_widgets/nice_export.dart';
 
-class MedicalTakeInsulinItem extends StatelessWidget {
-  final MedicalTakeInsulin medicalTakeInsulin;
-  const MedicalTakeInsulinItem({
+class MedicalMealItem extends StatelessWidget {
+  final MedicalMeal medicalMeal;
+  const MedicalMealItem({
     Key? key,
-    required this.medicalTakeInsulin,
+    required this.medicalMeal,
   }) : super(key: key);
   //build
   @override
   Widget build(BuildContext context) {
-    DateTime t = medicalTakeInsulin.time;
+    DateTime t = medicalMeal.time;
     String hm = NiceDateTime.hourMinute(t);
     String d = NiceDateTime.dayMonth(t);
-    if (medicalTakeInsulin.insulinUI == 0) return Container();
     return SimpleContainer(
       child: ListTile(
-          title: Text(
-              'Tiêm Insulin ${EnumToString.enumToString(medicalTakeInsulin.insulinType)}'),
-          subtitle: Text(medicalTakeInsulin.insulinUI.toString() + ' UI'),
+          title: Text('Ăn'),
           trailing: Column(
             children: [
               Text(d),

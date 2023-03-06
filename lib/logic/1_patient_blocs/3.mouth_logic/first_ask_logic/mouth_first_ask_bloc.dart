@@ -1,10 +1,10 @@
 //tao mouth first ask bloc từ form bloc
 import 'package:diabetichero_app/data/models/3.mouth/1.mouth_regimen.dart';
+import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_check.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
+import 'acute_hyper_glycemia_check.dart';
 
 class MouthFirstAskBloc extends FormBloc<String, String> {
   //cubit

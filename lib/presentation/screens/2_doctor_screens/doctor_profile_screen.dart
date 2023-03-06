@@ -13,8 +13,7 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import '../../../authentication/login_screen/1_login_screen.dart';
 import '../../../data/data_provider/regimen_provider.dart';
 import '../../../data/models/doctor/doctor.dart';
-import '../../../data/models/medical/2_medical_check_glucose.dart';
-import '../../../data/models/medical/3_medical_take_insulin.dart';
+
 import '../../widgets/bars/bottom_navitgator_bar.dart';
 import '../../widgets/bars/doctor_navigator_bar.dart';
 import '../3_setting_screens/remember_login_cubit.dart';

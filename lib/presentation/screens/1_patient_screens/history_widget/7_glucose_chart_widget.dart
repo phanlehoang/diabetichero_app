@@ -2,7 +2,7 @@ import 'package:diabetichero_app/presentation/widgets/nice_widgets/1_nice_contai
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../../../data/models/medical/2_medical_check_glucose.dart';
+import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
 import 'dongs_chart.dart';
 import 'nice_date_time.dart';
 
@@ -69,6 +69,19 @@ class TrialChart extends StatelessWidget {
                 borderWidth: 1,
                 color: Color.fromARGB(255, 255, 255, 0),
                 borderColor: Color.fromARGB(255, 255, 255, 0),
+                // Label text for the reference plot line
+                textStyle: TextStyle(color: Colors.green),
+                // provided dash array to render the line in dashed format.
+                dashArray: <double>[10, 10]),
+            PlotBand(
+                isVisible: true,
+                // provided the same y-value to start and end property in order to render the plotline for that y-value.
+                start: 11.1,
+                end: 19.5,
+                borderWidth: 1,
+                //mau cam
+                color: Colors.orangeAccent,
+                borderColor: Colors.orange,
                 // Label text for the reference plot line
                 textStyle: TextStyle(color: Colors.green),
                 // provided dash array to render the line in dashed format.

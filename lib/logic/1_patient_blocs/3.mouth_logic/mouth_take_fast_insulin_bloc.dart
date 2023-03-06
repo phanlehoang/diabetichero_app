@@ -1,19 +1,20 @@
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
+import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'acute_hyper_glycemia_logic/mouth_fast_insulin_guide.dart';
 import 'acute_hyper_glycemia_logic/mouth_slow_insulin_guide.dart';
 
-class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {
+class MouthTakeFastInsulinBloc extends FormBloc<String, String> {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
   final insulinUI = TextFieldBloc();
   final insulinType = SelectFieldBloc(
-    items: ['Levemir', 'Lantus', 'Insulatard'],
+    items: ['Actrapid', 'NovoRapid'],
     validators: [FieldBlocValidators.required],
   );
 
-  MouthTakeSlowInsulinBloc({required this.mouthProcedureOnlineCubit}) {
+  MouthTakeFastInsulinBloc({required this.mouthProcedureOnlineCubit}) {
     addFieldBlocs(
       fieldBlocs: [
         insulinUI,
@@ -26,14 +27,15 @@ class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {
   void onSubmitting() async {
     try {
       //b1: update medicalTakeInsulin
+      final mouthProcedure = mouthProcedureOnlineCubit.state;
+      final logicGuide = MouthFastInsulinGuide(mouthProcedure);
       MedicalTakeInsulin medicalTakeInsulin =
-          MouthSlowInsulinGuide.medicalTakeInsulin(
-              mouthProcedureOnlineCubit.profile.weight);
+          logicGuide.medicalTakeInsulinGuide;
       medicalTakeInsulin.insulinUI = num.tryParse(insulinUI.value) != null
           ? num.parse(insulinUI.value)
           : medicalTakeInsulin.insulinUI;
       dynamic insulinTypeString =
-          insulinType.value != null ? insulinType.value : 'Slow';
+          insulinType.value != null ? insulinType.value : 'Fast';
       medicalTakeInsulin.insulinType =
           StringToEnum.stringToInsulinType(insulinTypeString);
 

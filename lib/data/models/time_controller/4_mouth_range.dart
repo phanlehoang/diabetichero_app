@@ -55,6 +55,7 @@ class MouthFastInsulinRange extends MedicalRange {
       default:
         meal = 'bữa ăn';
     }
-    return 'Bạn phải đợi đến $meal $date cho lần tiêm insulin chậm tiếp theo.';
+
+    return 'Bạn phải đợi đến trước $meal $date cho lần tiêm insulin nhanh tiếp theo.';
   }
 }

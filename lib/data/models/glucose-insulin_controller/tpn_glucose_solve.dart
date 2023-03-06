@@ -1,3 +1,4 @@
+import '../enum/enums.dart';
 import '../medical/4_regimen.dart';
 import '../medical/6_procedure_state.dart';
 import 'glucose_solve.dart';
