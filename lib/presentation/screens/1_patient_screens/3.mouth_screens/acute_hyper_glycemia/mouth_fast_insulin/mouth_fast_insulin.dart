@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../../../data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import '../../../../../../data/models/time_controller/4_mouth_range/4_mouth_range.dart';
-import '../../../../../../logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_is_done.dart';
+import '../../../../../../logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_logic.dart';
 import '../../../../../../logic/status_cubit/time_check/time_check_cubit.dart';
 import 'mouth_guide_fast_insulin.dart';
 
@@ -52,27 +52,27 @@ class MouthFastInsulin extends StatelessWidget {
                   morning = 'trưa';
                   break;
                 case 2:
-                  morning = 'tối';
+                  morning = 'chiều';
                   break;
                 default:
               }
               final MouthProcedure mouthProcedure =
                   mouthProcedureOnlineCubit.state;
 
-              final logicIsDone =
-                  MouthFastInsulinIsDone(mouthProcedure: mouthProcedure);
+              final logic =
+                  MouthFastInsulinLogic(mouthProcedure: mouthProcedure);
 
-              if (logicIsDone.isMealDone)
+              if (logic.isMealDone)
                 return Column(
                   children: [
                     Text(MouthMealRange().waitingMessage(DateTime.now())),
                   ],
                 );
-              if (logicIsDone.isDone)
+              if (logic.isInsulinDone)
                 return MouthMeal(
                   mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
                 );
-              if (logicIsDone.isGlucoseDone) {
+              if (logic.isGlucoseDone) {
                 return Column(
                   children: [
                     //Mouth Guide
@@ -88,7 +88,6 @@ class MouthFastInsulin extends StatelessWidget {
                   ],
                 );
               }
-
               return Column(
                 children: [
                   Text('Bạn phải tiêm insulin trước bữa $morning 10-30 phút.'),

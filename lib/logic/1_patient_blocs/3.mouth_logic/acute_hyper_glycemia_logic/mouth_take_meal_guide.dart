@@ -2,7 +2,7 @@ import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/data/models/medical/medical_action/4_medical_meal.dart';
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/4_mouth_range.dart';
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/mouth_meal_range.dart';
-import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_is_done.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_logic.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
@@ -27,7 +27,7 @@ class MouthTakeMealGuide {
 
   DateTime get lastFastInsulinTime {
     final logicFastInsulin =
-        MouthFastInsulinIsDone(mouthProcedure: mouthProcedure);
+        MouthFastInsulinLogic(mouthProcedure: mouthProcedure);
     return logicFastInsulin.lastFastInsulinTime;
   }
 

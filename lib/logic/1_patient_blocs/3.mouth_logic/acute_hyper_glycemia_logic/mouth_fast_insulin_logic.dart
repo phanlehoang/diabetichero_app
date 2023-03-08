@@ -7,15 +7,16 @@ import '../../../../data/models/medical/medical_action/2_medical_check_glucose.d
 import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
 import 'mouth_take_meal_guide.dart';
 
-class MouthFastInsulinIsDone {
+class MouthFastInsulinLogic {
   List<InsulinType> FastInsulinTypes = [
     //Actrapid và novorapid
     InsulinType.Actrapid,
     InsulinType.NovoRapid,
+    InsulinType.Fast,
   ];
   final MouthProcedure mouthProcedure;
 
-  MouthFastInsulinIsDone({required this.mouthProcedure});
+  MouthFastInsulinLogic({required this.mouthProcedure});
 
   DateTime get lastFastInsulinTime {
     dynamic lastTime = DateTime(1999);
@@ -53,7 +54,7 @@ class MouthFastInsulinIsDone {
     return MouthMealRange().isHot(this.lastGlucoseTime);
   }
 
-  bool get isDone {
+  bool get isInsulinDone {
     return MouthMealRange().isHot(this.lastFastInsulinTime);
   }
 }
