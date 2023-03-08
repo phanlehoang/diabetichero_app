@@ -1,3 +1,4 @@
+import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/mouth_meal_range.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/1.sonde_screens/sonde_fast_insulin/2_1_1_check_glucose_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/acute_hyper_glycemia/mouth_fast_insulin/mouth_real_fast_insulin.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/acute_hyper_glycemia/mouth_meal/mouth_meal.dart';
@@ -9,14 +10,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../../../data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
-import '../../../../../../data/models/time_controller/4_mouth_range.dart';
+import '../../../../../../data/models/time_controller/4_mouth_range/4_mouth_range.dart';
 import '../../../../../../logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_is_done.dart';
 import '../../../../../../logic/status_cubit/time_check/time_check_cubit.dart';
 import 'mouth_guide_fast_insulin.dart';
 
 class InFastMouthRangeCubit extends Cubit<int?> {
   InFastMouthRangeCubit()
-      : super(MouthFastInsulinRange().rangeContain(DateTime.now()));
+      : super(MouthMealRange().rangeContain(DateTime.now()));
 }
 
 class MouthFastInsulin extends StatelessWidget {
@@ -31,7 +32,7 @@ class MouthFastInsulin extends StatelessWidget {
           // Text('Tiêm nhanh'),
           BlocBuilder<TimeCheckCubit, int>(
             builder: (context, state) {
-              int? index = MouthFastInsulinRange().rangeContain(DateTime.now());
+              int? index = MouthMealRange().rangeContain(DateTime.now());
               inFastMouthRangeCubit.emit(index);
               return Container();
             },
@@ -40,8 +41,7 @@ class MouthFastInsulin extends StatelessWidget {
             bloc: inFastMouthRangeCubit,
             builder: (context, state) {
               if (state == null) {
-                return Text(
-                    MouthFastInsulinRange().waitingMessage(DateTime.now()));
+                return Text(MouthMealRange().waitingMessage(DateTime.now()));
               }
               String morning = 'sáng';
               switch (state) {
@@ -62,11 +62,10 @@ class MouthFastInsulin extends StatelessWidget {
               final logicIsDone =
                   MouthFastInsulinIsDone(mouthProcedure: mouthProcedure);
 
-              if (logicIsDone.isMealDone())
+              if (logicIsDone.isMealDone)
                 return Column(
                   children: [
-                    Text(
-                        MouthFastInsulinRange().waitingMessage(DateTime.now())),
+                    Text(MouthMealRange().waitingMessage(DateTime.now())),
                   ],
                 );
               if (logicIsDone.isDone)

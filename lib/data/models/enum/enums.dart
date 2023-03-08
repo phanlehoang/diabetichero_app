@@ -28,7 +28,9 @@ enum MouthProcedureStatus {
   firstAsk,
   acuteHyperglycemia, //tăng đường huyết cấp tính
   secondAsk,
-  hypoglycemia, //bị hạ đường huyết
+  hypoGlycemia, //bị hạ đường huyết
+  hypoGlycemiaNoInsulin, //bị hạ đường huyết nhưng không có insulin
+  hypoGlycemiaYesInsulin, //bị hạ đường huyết và có insulin
   thirdAsk,
   baseBolus,
   endocrineConference, //hội chẩn nội tiết

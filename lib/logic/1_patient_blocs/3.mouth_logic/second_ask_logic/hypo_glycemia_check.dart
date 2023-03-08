@@ -68,16 +68,7 @@ class HypoGlycemiaCheck {
         mobileDisfunction: mobileDisfunction,
       );
     }
-    return HypoGlycemiaCheck(
-      cognitiveImpairment: false,
-      dialysis: false,
-      cirrhosis: false,
-      metastaticCancer: false,
-      heartFailureHyperTension: false,
-      stroke: false,
-      alcoholicDementia: false,
-      otherSeriousDisease: false,
-    );
+    return HypoGlycemiaCheck();
   }
 
   //to Map
@@ -100,7 +91,7 @@ class HypoGlycemiaCheck {
   }
 
   //kiểm tra nguy cơ hạ đường
-  bool get isHypoGlycemiaRisk {
+  bool get ishypoGlycemiaRisk {
     if (cognitiveImpairment ||
         dialysis ||
         cirrhosis ||

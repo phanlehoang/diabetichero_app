@@ -16,7 +16,6 @@ class MealSubmit extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Bắt đầu ăn'),
         BlocProvider(
             create: (ct2) => MouthTakeMealBloc(
                   mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,

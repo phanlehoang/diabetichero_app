@@ -81,14 +81,21 @@ class StringToEnum {
     switch (s) {
       case 'loading':
         return MouthProcedureStatus.loading;
+      //ca 1
       case 'firstAsk':
         return MouthProcedureStatus.firstAsk;
       case 'acuteHyperglycemia':
         return MouthProcedureStatus.acuteHyperglycemia;
+      //ca 2
       case 'secondAsk':
         return MouthProcedureStatus.secondAsk;
-      case 'hypoglycemia':
-        return MouthProcedureStatus.hypoglycemia;
+      case 'hypoGlycemia':
+        return MouthProcedureStatus.hypoGlycemia;
+      case 'hypoGlycemiaNoInsulin':
+        return MouthProcedureStatus.hypoGlycemiaNoInsulin;
+      case 'hypoGlycemiaYesInsulin':
+        return MouthProcedureStatus.hypoGlycemiaYesInsulin;
+      //ca 3
       case 'thirdAsk':
         return MouthProcedureStatus.thirdAsk;
       case 'baseBolus':

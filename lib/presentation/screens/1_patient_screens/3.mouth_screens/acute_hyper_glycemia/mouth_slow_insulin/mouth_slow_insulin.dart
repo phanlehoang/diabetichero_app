@@ -10,7 +10,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 //import mouth range
 //import 'C:\Users\HoangPhan\Desktop\test\diabetichero_app\lib\data\models\time_controller\4_mouth_range.dart';
-import 'package:diabetichero_app/data/models/time_controller/4_mouth_range.dart';
+import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/4_mouth_range.dart';
 import '../../../../../../data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'mouth_guide_slow_insulin.dart';
 import 'mouth_real_slow_insulin.dart';

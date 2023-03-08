@@ -1,5 +1,5 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/time_controller/4_mouth_range.dart';
+import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/4_mouth_range.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
