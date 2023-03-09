@@ -46,7 +46,11 @@ class MouthFastInsulinGuide {
     switch (eval(lastGlucoseAmount)) {
       case GlucoseEvaluation.low:
         bonus = 0;
-        break;
+        return MedicalTakeInsulin(
+          insulinType: InsulinType.Fast,
+          time: DateTime.now(),
+          insulinUI: 0,
+        );
       case GlucoseEvaluation.normal:
         bonus = 0;
         break;
@@ -61,6 +65,7 @@ class MouthFastInsulinGuide {
         break;
       default:
     }
+
     return MedicalTakeInsulin(
       insulinType: InsulinType.Fast,
       time: DateTime.now(),

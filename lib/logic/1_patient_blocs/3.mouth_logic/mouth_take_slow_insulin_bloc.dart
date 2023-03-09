@@ -10,7 +10,7 @@ class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {
   final insulinUI = TextFieldBloc();
   final insulinType = SelectFieldBloc(
     items: ['Levemir', 'Lantus', 'Insulatard'],
-    validators: [FieldBlocValidators.required],
+    //  validators: [FieldBlocValidators.required],
   );
 
   MouthTakeSlowInsulinBloc({required this.mouthProcedureOnlineCubit}) {

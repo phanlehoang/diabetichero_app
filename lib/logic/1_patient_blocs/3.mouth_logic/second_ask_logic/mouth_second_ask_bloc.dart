@@ -58,7 +58,7 @@ class MouthSecondAskBloc extends FormBloc<String, String> {
   //submit
   @override
   void onSubmitting() async {
-    final HypoGlycemiaCheck hypoGlycemiaCheck = HypoGlycemiaCheck(
+    final hypoGlycemiaCheck = HypoGlycemiaCheck(
       dialysis: dialysis.value,
       cirrhosis: cirrhosis.value,
       metastaticCancer: metastaticCancer.value,
@@ -73,7 +73,7 @@ class MouthSecondAskBloc extends FormBloc<String, String> {
       eatingDisfunction: eatingDisfunction.value,
       mobileDisfunction: mobileDisfunction.value,
     );
-    if (hypoGlycemiaCheck.isHypoGlycemiaRisk) {
+    if (hypoGlycemiaCheck.ishypoGlycemiaRisk) {
       MouthRegimen mouthRegimen = MouthRegimen(
         name: 'Hypo Glycemia',
         beginTime: DateTime.now(),
@@ -85,7 +85,7 @@ class MouthSecondAskBloc extends FormBloc<String, String> {
       //b2: gửi regimen acute hyper glycemia lên server
       mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);
       mouthProcedureOnlineCubit
-          .updateProcedureStatus(MouthProcedureStatus.hypoglycemia);
+          .updateProcedureStatus(MouthProcedureStatus.hypoGlycemia);
 
       emitSuccess();
     } else {
