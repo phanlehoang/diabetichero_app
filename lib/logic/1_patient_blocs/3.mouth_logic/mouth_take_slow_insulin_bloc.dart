@@ -7,13 +7,15 @@ import 'acute_hyper_glycemia_logic/mouth_slow_insulin_guide.dart';
 
 class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
+  final logicGuide;
   final insulinUI = TextFieldBloc();
   final insulinType = SelectFieldBloc(
     items: ['Levemir', 'Lantus', 'Insulatard'],
     //  validators: [FieldBlocValidators.required],
   );
 
-  MouthTakeSlowInsulinBloc({required this.mouthProcedureOnlineCubit}) {
+  MouthTakeSlowInsulinBloc(
+      {required this.logicGuide, required this.mouthProcedureOnlineCubit}) {
     addFieldBlocs(
       fieldBlocs: [
         insulinUI,
@@ -26,9 +28,8 @@ class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {
   void onSubmitting() async {
     try {
       //b1: update medicalTakeInsulin
-      MedicalTakeInsulin medicalTakeInsulin =
-          MouthSlowInsulinGuide.medicalTakeInsulin(
-              mouthProcedureOnlineCubit.profile.weight);
+      MedicalTakeInsulin medicalTakeInsulin = logicGuide
+          .medicalTakeInsulin(mouthProcedureOnlineCubit.profile.weight);
       medicalTakeInsulin.insulinUI = num.tryParse(insulinUI.value) != null
           ? num.parse(insulinUI.value)
           : medicalTakeInsulin.insulinUI;

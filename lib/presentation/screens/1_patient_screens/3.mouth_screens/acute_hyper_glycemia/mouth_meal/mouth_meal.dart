@@ -1,7 +1,7 @@
 import 'package:diabetichero_app/data/models/3.mouth/2.mouth_procedure.dart';
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_take_meal_bloc.dart';
-import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_take_meal_guide.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_take_meal_logic.dart';
 import 'package:diabetichero_app/logic/status_cubit/time_check/time_check_cubit.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/1_nice_container.dart';
 import 'package:flutter/material.dart';
@@ -26,9 +26,9 @@ class MouthMeal extends StatelessWidget {
           BlocBuilder(
               bloc: mouthProcedureOnlineCubit,
               builder: (ct2, st2) {
-                final logicMeal = MouthTakeMealGuide(
+                final logicMeal = MouthTakeMealLogic(
                     mouthProcedure: mouthProcedureOnlineCubit.state);
-                if (logicMeal.isDone) return Text('BN đã bắt đầu ăn');
+                if (logicMeal.isMealDone) return Text('BN đã bắt đầu ăn');
                 if (logicMeal.isWaitingForMeal) {
                   DateTime eatingTime =
                       logicMeal.lastFastInsulinTime.add(Duration(minutes: 10));

@@ -1,3 +1,4 @@
+import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_guide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
@@ -10,8 +11,10 @@ import '../../../../../widgets/nice_widgets/2_nice_button.dart';
 
 class MouthRealFastInsulin extends StatelessWidget {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
+  final logicGuide;
   const MouthRealFastInsulin({
     super.key,
+    required this.logicGuide,
     required this.mouthProcedureOnlineCubit,
   });
 
@@ -23,6 +26,7 @@ class MouthRealFastInsulin extends StatelessWidget {
         //1 form điền từ mouth take slow insulin bloc
         BlocProvider(
           create: (_) => MouthTakeFastInsulinBloc(
+            logicGuide: logicGuide,
             mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
           ),
           child: Builder(builder: (ct) {

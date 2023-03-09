@@ -1,5 +1,7 @@
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
+import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/day_segment_range.dart';
+import 'package:diabetichero_app/logic/status_cubit/range_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/2_mouth_first_ask_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/3_mouth_second_ask_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/3.1_mouth_hypo_glycemia.dart';
@@ -43,7 +45,9 @@ class MouthStatusWidget extends StatelessWidget {
           //hypo yes insulin
           case MouthProcedureStatus.hypoGlycemiaYesInsulin:
             return MouthHypoGlycemiaYesInsulin(
-                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
+                currentRangeCubit:
+                    RangeCubit(DaySegmentRange().rangeContain(DateTime.now())));
           //hypo no insulin
           case MouthProcedureStatus.hypoGlycemiaNoInsulin:
             return MouthHypoGlycemiaNoInsulin(

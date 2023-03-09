@@ -5,7 +5,7 @@ import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/mouth
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
 import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
-import 'mouth_take_meal_guide.dart';
+import 'mouth_take_meal_logic.dart';
 
 class MouthFastInsulinLogic {
   List<InsulinType> FastInsulinTypes = [
@@ -46,15 +46,15 @@ class MouthFastInsulinLogic {
 
   bool get isMealDone {
     //lấy last meal time từ mouth take meal guide
-    final logicTakeMeal = MouthTakeMealGuide(mouthProcedure: mouthProcedure);
-    return logicTakeMeal.isDone;
+    final logicTakeMeal = MouthTakeMealLogic(mouthProcedure: mouthProcedure);
+    return logicTakeMeal.isMealDone;
   }
 
   bool get isGlucoseDone {
     return MouthMealRange().isHot(this.lastGlucoseTime);
   }
 
-  bool get isInsulinDone {
+  bool get isFastInsulinDone {
     return MouthMealRange().isHot(this.lastFastInsulinTime);
   }
 }

@@ -6,11 +6,11 @@ class MouthMealRange extends MedicalRange {
       : super(ranges: [
           //3 khung gio
           //bữa sáng
-          Range(HourMinute(5, 00), HourMinute(10, 00)),
+          Range(HourMinute(5, 00), HourMinute(8, 00)),
           //bữa trưa
-          Range(HourMinute(10, 00), HourMinute(15, 00)),
+          Range(HourMinute(10, 00), HourMinute(13, 00)),
           //bữa tối
-          Range(HourMinute(17, 00), HourMinute(23, 00)),
+          Range(HourMinute(17, 00), HourMinute(21, 00)),
         ]);
   //waiting message
   @override

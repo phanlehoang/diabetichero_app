@@ -51,7 +51,7 @@ class MouthSlowInsulin extends StatelessWidget {
                   mouthProcedureOnlineCubit.state;
               final logic =
                   MouthSlowInsulinLogic(mouthProcedure: mouthProcedure);
-              if (logic.isDone)
+              if (logic.isSlowInsulinDone)
                 return Column(
                   children: [
                     //in ra các regimen của mouth procedure đang được thực hiện

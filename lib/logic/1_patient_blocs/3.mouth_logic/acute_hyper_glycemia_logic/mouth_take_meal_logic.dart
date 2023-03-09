@@ -8,10 +8,10 @@ import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
 import 'mouth_fast_insulin_guide.dart';
 
-class MouthTakeMealGuide {
+class MouthTakeMealLogic {
   final MouthProcedure mouthProcedure;
 
-  MouthTakeMealGuide({required this.mouthProcedure});
+  MouthTakeMealLogic({required this.mouthProcedure});
 
   DateTime get lastMealTime {
     dynamic lastTime = DateTime(1999);
@@ -39,7 +39,7 @@ class MouthTakeMealGuide {
         .isAfter(DateTime.now());
   }
 
-  bool get isDone {
+  bool get isMealDone {
     return MouthMealRange().isHot(this.lastMealTime);
   }
 }

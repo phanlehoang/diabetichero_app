@@ -1,4 +1,5 @@
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/mouth_meal_range.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/acute_hyper_glycemia_logic/mouth_fast_insulin_guide.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/1.sonde_screens/sonde_fast_insulin/2_1_1_check_glucose_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/acute_hyper_glycemia/mouth_fast_insulin/mouth_real_fast_insulin.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/acute_hyper_glycemia/mouth_meal/mouth_meal.dart';
@@ -68,7 +69,7 @@ class MouthFastInsulin extends StatelessWidget {
                     Text(MouthMealRange().waitingMessage(DateTime.now())),
                   ],
                 );
-              if (logic.isInsulinDone)
+              if (logic.isFastInsulinDone)
                 return MouthMeal(
                   mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
                 );
@@ -83,6 +84,9 @@ class MouthFastInsulin extends StatelessWidget {
                       mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
                     ),
                     MouthRealFastInsulin(
+                      logicGuide: MouthFastInsulinGuide(
+                        mouthProcedureOnlineCubit.state,
+                      ),
                       mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
                     ),
                   ],

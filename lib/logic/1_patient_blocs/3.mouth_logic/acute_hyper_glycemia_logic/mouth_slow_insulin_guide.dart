@@ -8,7 +8,7 @@ class MouthSlowInsulinGuide {
     return (weight * 0.2).round();
   }
 
-  static MedicalTakeInsulin medicalTakeInsulin(num weight) {
+  MedicalTakeInsulin medicalTakeInsulin(num weight) {
     return MedicalTakeInsulin(
       insulinUI: insulinUI(weight),
       insulinType: InsulinType.Slow,

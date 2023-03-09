@@ -19,11 +19,18 @@ class MouthSlowInsulinLogic {
   DateTime get lastSlowInsulinTime {
     dynamic lastTime = DateTime(1999);
     int regimensLength = mouthProcedure.regimens.length;
-    for (int i = 0; i < regimensLength; i++) {
-      for (dynamic x in mouthProcedure.regimens[i].medicalActions) {
-        if (!(x is MedicalTakeInsulin)) continue;
-        if (!(slowInsulinTypes.contains(x.insulinType))) continue;
-        if (x.time.isAfter(lastTime)) lastTime = x.time;
+    //for reverse
+    for (int i = regimensLength - 1; i >= 0; i--) {
+      int medicalActionsLength =
+          mouthProcedure.regimens[i].medicalActions.length;
+      //for reverse
+      for (int j = medicalActionsLength - 1; j >= 0; j--) {
+        dynamic x = mouthProcedure.regimens[i].medicalActions[j];
+        if (x is MedicalTakeInsulin) {
+          if (slowInsulinTypes.contains(x.insulinType)) {
+            return x.time;
+          }
+        }
       }
     }
     return lastTime;
@@ -47,7 +54,7 @@ class MouthSlowInsulinLogic {
     return MouthSlowInsulinRange().isHot(this.lastGlucoseTime);
   }
 
-  bool get isDone {
+  bool get isSlowInsulinDone {
     return MouthSlowInsulinRange().isHot(this.lastSlowInsulinTime);
   }
 }
