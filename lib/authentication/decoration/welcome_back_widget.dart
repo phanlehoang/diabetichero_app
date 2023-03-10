@@ -10,7 +10,7 @@ class WelcomeBackWidget extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Text(
-        "Hân Hạnh \n Chào mừng quay trở lại!",
+        " Chào mừng quay trở lại!",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,
@@ -20,4 +20,3 @@ class WelcomeBackWidget extends StatelessWidget {
     );
   }
 }
-
