@@ -8,7 +8,7 @@ class MouthTakeMealBloc extends FormBloc<String, String> {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
   final description = TextFieldBloc(
     validators: [
-      FieldBlocValidators.required,
+      // FieldBlocValidators.required,
     ],
   );
 

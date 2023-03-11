@@ -71,7 +71,7 @@ class MouthHypoGlycemiaFastInsulinGuide {
       case GlucoseEvaluation.low:
         return Text('Ngừng tiêm insulin. Xử trí hạ đường huyết');
       case GlucoseEvaluation.normal:
-        return Text('Không tiêm thêm insulin');
+        return Text('Không tiêm insulin tác dụng nhanh.');
       case GlucoseEvaluation.high:
         return Text(
             'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid)');

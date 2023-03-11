@@ -21,7 +21,7 @@ class MedicalCheckGlucoseItem extends StatelessWidget {
     return SimpleContainer(
       child: ListTile(
           title: Text('Glucose '),
-          subtitle: Text(medicalCheckGlucose.glucoseUI.toString() + ' UI'),
+          subtitle: Text(medicalCheckGlucose.glucoseUI.toString() + ' mmol/L'),
           trailing: Column(
             children: [
               Text(d),

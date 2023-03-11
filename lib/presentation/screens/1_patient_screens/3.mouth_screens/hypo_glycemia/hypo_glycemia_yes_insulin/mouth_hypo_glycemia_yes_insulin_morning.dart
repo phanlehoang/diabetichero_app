@@ -67,9 +67,7 @@ class MouthHypoGlycemiaYesInsulinMorning extends StatelessWidget {
                   children: [
                     fastInsulinLogic.guide,
                     MouthRealFastInsulin(
-                        logicGuide: HypoGlycemiaLantusGuide(
-                          mouthProcedureOnlineCubit.profile.weight,
-                        ),
+                        logicGuide: fastInsulinLogic,
                         mouthProcedureOnlineCubit: mouthProcedureOnlineCubit),
                   ],
                 );

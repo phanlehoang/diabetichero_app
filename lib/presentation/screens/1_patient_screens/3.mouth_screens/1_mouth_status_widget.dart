@@ -34,6 +34,8 @@ class MouthStatusWidget extends StatelessWidget {
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           case MouthProcedureStatus.acuteHyperglycemia:
             return MouthAcuteHyperGlycemia(
+                currentRangeCubit:
+                    RangeCubit(DaySegmentRange().rangeContain(DateTime.now())),
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           case MouthProcedureStatus.secondAsk:
             return MouthSecondAskWidget(

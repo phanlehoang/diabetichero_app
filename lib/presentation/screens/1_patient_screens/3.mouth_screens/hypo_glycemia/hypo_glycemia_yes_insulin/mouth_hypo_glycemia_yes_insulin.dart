@@ -42,16 +42,34 @@ class MouthHypoGlycemiaYesInsulin extends StatelessWidget {
                         DaySegmentRange().waitingMessage(DateTime.now()));
                   case 0:
                     //breakfast
-                    return MouthHypoGlycemiaYesInsulinMorning(
-                      mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
+                    return Column(
+                      children: [
+                        Text('Bạn cần tiêm insulin trước bữa sáng 30-45 phút.'),
+                        MouthHypoGlycemiaYesInsulinMorning(
+                          mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
+                        ),
+                      ],
                     );
                   case 3:
                     //night
-                    return MouthHypoGlycemiaYesInsulinNight(
-                        mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+                    return Column(
+                      children: [
+                        Text('Đo đường huyết'),
+                        MouthHypoGlycemiaYesInsulinNight(
+                            mouthProcedureOnlineCubit:
+                                mouthProcedureOnlineCubit),
+                      ],
+                    );
                   default:
-                    return MouthHypoGlycemiaYesInsulinMiddle(
-                        mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+                    return Column(
+                      children: [
+                        Text(
+                            'Nếu tiêm insulin thì bạn phải chờ 10-30 phút sau khi tiêm để bắt đầu bữa ăn.'),
+                        MouthHypoGlycemiaYesInsulinMiddle(
+                            mouthProcedureOnlineCubit:
+                                mouthProcedureOnlineCubit),
+                      ],
+                    );
                 }
               }),
         ],
