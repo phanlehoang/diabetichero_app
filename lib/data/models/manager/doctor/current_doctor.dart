@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/doctor/doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/doctor.dart';
 import 'package:diabetichero_app/presentation/screens/3_setting_screens/remember_login_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

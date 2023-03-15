@@ -2,7 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'enum/enums.dart';
+import '../enum/enums.dart';
 
 class Profile {
   String id = 'Unknown';

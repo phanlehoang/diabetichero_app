@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/2_profile.dart';
+import '../../../data/models/manager/2_profile.dart';
 
 class DeletePatientButton extends StatelessWidget {
   const DeletePatientButton({
@@ -70,7 +70,7 @@ Future<void> deletePatient(String groupId, Profile profile) async {
       .doc(groupId)
       .collection('patients')
       .doc(profile.id);
-  //b1: xoa cac regimens trong procedure 
+  //b1: xoa cac regimens trong procedure
   var procedures = await ref.collection('procedures').get();
   for (var procedure in procedures.docs) {
     await deleteCollection(procedure.reference.collection('regimens'));

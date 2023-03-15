@@ -7,11 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:diabetichero_app/data/models/time_controller/2_sonde_range.dart';
 
-import '../2_profile.dart';
+import '../manager/2_profile.dart';
 import '../enum/enums.dart';
-import '../medical/4_regimen.dart';
-import '../medical/6_procedure_state.dart';
-import '../medical/7_medical_procedure.dart';
+import '../0.medical/4_regimen.dart';
+import '../0.medical/6_procedure_state.dart';
+import '../0.medical/7_medical_procedure.dart';
 import '../time_controller/3_TPN_range.dart';
 
 class TPNProcedure extends MedicalProcedure {

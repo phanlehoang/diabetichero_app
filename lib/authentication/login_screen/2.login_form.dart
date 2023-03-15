@@ -1,4 +1,4 @@
-import 'package:diabetichero_app/data/models/doctor/current_doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/current_doctor.dart';
 import 'package:diabetichero_app/logic/status_cubit/navigator_bar_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/0_home_screens/0_home_screen.dart';
 import 'package:diabetichero_app/presentation/screens/3_setting_screens/setting_screen.dart';

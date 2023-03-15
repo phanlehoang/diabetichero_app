@@ -2,7 +2,7 @@ import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/enum/1_enum_to_string.dart';
-import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import '../../../../data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import '../../../widgets/nice_widgets/nice_export.dart';
 
 class MedicalTakeInsulinItem extends StatelessWidget {

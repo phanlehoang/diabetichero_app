@@ -1,6 +1,6 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 
-import '../medical/6_procedure_state.dart';
+import '../0.medical/6_procedure_state.dart';
 
 class SondeSlowInsulinSolve {
   final InsulinType insulinType;

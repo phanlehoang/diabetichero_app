@@ -1,10 +1,9 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/doctor/current_doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/current_doctor.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
-import 'package:diabetichero_app/presentation/screens/2_doctor_screens/candies.dart';
+import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -12,13 +11,11 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../../authentication/login_screen/1_login_screen.dart';
 import '../../../data/data_provider/regimen_provider.dart';
-import '../../../data/models/doctor/doctor.dart';
+import '../../../data/models/manager/doctor/doctor.dart';
 
 import '../../widgets/bars/bottom_navitgator_bar.dart';
 import '../../widgets/bars/doctor_navigator_bar.dart';
 import '../3_setting_screens/remember_login_cubit.dart';
-import 'cubit/counter_cubit.dart';
-import 'cubit/counter_state.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   const DoctorProfileScreen({super.key});

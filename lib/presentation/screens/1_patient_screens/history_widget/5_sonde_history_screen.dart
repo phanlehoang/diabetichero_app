@@ -1,7 +1,7 @@
 //tao 1 trang history có attribute la sondeProcedureOnlineCubit
 
 //import material
-import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
+import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/7.1_glucose_extract.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/7_glucose_chart_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';

@@ -10,8 +10,8 @@ class ProcedureState {
     required this.status,
     this.cho = 0,
     this.bonusInsulin = 0,
-    this.weight = 0, 
-    this. slowInsulinType = InsulinType.Unknown,
+    this.weight = 0,
+    this.slowInsulinType = InsulinType.Unknown,
   });
   //clone
   ProcedureState clone() {
@@ -53,7 +53,8 @@ class ProcedureState {
         cho: map['cho'],
         bonusInsulin: map['bonusInsulin'],
         weight: map['weight'],
-        slowInsulinType: StringToEnum.stringToInsulinType(map['slowInsulinType']),
+        slowInsulinType:
+            StringToEnum.stringToInsulinType(map['slowInsulinType']),
       );
     } catch (e) {
       var a = initSondeState();

@@ -1,11 +1,11 @@
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
 import '../../../../data/models/enum/enums.dart';
 import '../../../../data/models/glucose-insulin_controller/glucose_solve.dart';
-import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
+import '../../../../data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 
 class MouthFastInsulinGuide {
   GlucoseEvaluation eval(num glucose) {

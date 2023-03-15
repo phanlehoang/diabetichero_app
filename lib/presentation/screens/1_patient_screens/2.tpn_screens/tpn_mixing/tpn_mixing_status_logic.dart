@@ -2,8 +2,8 @@ import 'package:diabetichero_app/data/models/2.TPN/1_TPN_procedure.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/data/models/time_controller/3_TPN_range.dart';
 
-import '../../../../../data/models/medical/4_regimen.dart';
-import '../../../../../data/models/medical/medical_action/2.1_medical_mixing.dart';
+import '../../../../../data/models/0.medical/4_regimen.dart';
+import '../../../../../data/models/0.medical/medical_action/2.1_medical_mixing.dart';
 
 class TPNMixingStatusLogic {
   final procedure;

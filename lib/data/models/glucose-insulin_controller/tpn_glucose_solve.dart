@@ -1,6 +1,6 @@
 import '../enum/enums.dart';
-import '../medical/4_regimen.dart';
-import '../medical/6_procedure_state.dart';
+import '../0.medical/4_regimen.dart';
+import '../0.medical/6_procedure_state.dart';
 import 'glucose_solve.dart';
 
 class TPNGlucoseSolve {

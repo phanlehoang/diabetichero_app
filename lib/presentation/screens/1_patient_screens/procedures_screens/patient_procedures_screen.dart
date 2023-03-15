@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/2_profile.dart';
+import 'package:diabetichero_app/data/models/manager/2_profile.dart';
 import 'package:diabetichero_app/data/models/2.TPN/1_TPN_procedure.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
+import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
 import 'package:diabetichero_app/logic/status_cubit/navigator_bar_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/TPN_procedure_item.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/create_procedure.dart';
@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nice_buttons/nice_buttons.dart';
 
-import '../../../../data/models/2.3_current_profile_cubit.dart';
+import '../../../../data/models/manager/2.3_current_profile_cubit.dart';
 import '../../../../logic/global/current_group/current_group_id_cubit.dart';
 import '../../../widgets/bars/bottom_navitgator_bar.dart';
 import '../../../widgets/bars/patient_navigator_bar.dart';

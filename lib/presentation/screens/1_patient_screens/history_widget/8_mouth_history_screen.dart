@@ -1,7 +1,7 @@
 //tao 1 trang history có attribute la MouthProcedureOnlineCubit
 
 //import material
-import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
+import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/7_glucose_chart_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';

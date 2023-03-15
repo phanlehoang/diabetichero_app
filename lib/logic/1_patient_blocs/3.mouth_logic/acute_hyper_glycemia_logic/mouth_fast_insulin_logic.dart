@@ -3,8 +3,8 @@ import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/4_mou
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/mouth_meal_range.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
-import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
-import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import '../../../../data/models/0.medical/medical_action/2_medical_check_glucose.dart';
+import '../../../../data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import 'mouth_take_meal_logic.dart';
 
 class MouthFastInsulinLogic {

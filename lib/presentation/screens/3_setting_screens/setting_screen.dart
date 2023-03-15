@@ -12,7 +12,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/doctor/current_doctor.dart';
+import '../../../data/models/manager/doctor/current_doctor.dart';
 import '../../widgets/bars/bottom_navitgator_bar.dart';
 
 class SettingScreen extends StatelessWidget {

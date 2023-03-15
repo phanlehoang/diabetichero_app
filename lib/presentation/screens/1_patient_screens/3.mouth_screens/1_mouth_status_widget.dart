@@ -8,8 +8,7 @@ import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_no_insulin/mouth_hypo_glycemia_no_insulin.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_yes_insulin/mouth_hypo_glycemia_yes_insulin.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';

@@ -1,5 +1,5 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 
 class HypoGlycemiaLantusGuide {
   final num weight;

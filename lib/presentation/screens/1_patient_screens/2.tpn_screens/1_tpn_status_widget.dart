@@ -12,11 +12,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../data/models/2.3_current_profile_cubit.dart';
+import '../../../../data/models/manager/2.3_current_profile_cubit.dart';
 import '../../../../data/models/2.TPN/1_TPN_procedure.dart';
 import '../../../../data/models/2.TPN/3_TPN_procedure_online_cubit.dart';
-import '../../../../data/models/medical/7_medical_procedure.dart';
-import '../../../../data/models/models_export.dart';
+import '../../../../data/models/0.medical/7_medical_procedure.dart';
+import '../../../../data/models/manager/models_export.dart';
 import '../../../widgets/nice_widgets/0.1_nice_internet_screen.dart';
 import '2_tpn_first_ask_widget.dart';
 

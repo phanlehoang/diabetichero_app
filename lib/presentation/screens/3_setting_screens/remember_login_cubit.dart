@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:diabetichero_app/data/models/doctor/current_doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/current_doctor.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';

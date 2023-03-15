@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../../data/models/medical/6_procedure_state.dart';
+import '../../../../data/models/0.medical/6_procedure_state.dart';
 import '../../../../logic/1_patient_blocs/2.tpn_logic/tpn_first_ask_bloc.dart';
 import '../../../widgets/nice_widgets/1_nice_container.dart';
 import '../../../widgets/nice_widgets/2_nice_button.dart';

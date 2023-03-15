@@ -2,7 +2,7 @@ import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cu
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import '../../../data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import 'acute_hyper_glycemia_logic/mouth_slow_insulin_guide.dart';
 
 class MouthTakeSlowInsulinBloc extends FormBloc<String, String> {

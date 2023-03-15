@@ -2,7 +2,7 @@ import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/medical/4_regimen.dart';
+import '../../../../data/models/0.medical/4_regimen.dart';
 import 'medical_action_item.dart';
 
 class RegimenItem extends StatelessWidget {

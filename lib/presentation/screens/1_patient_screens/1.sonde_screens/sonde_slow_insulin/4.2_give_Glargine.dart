@@ -1,8 +1,8 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:diabetichero_app/data/models/glucose-insulin_controller/sonde_slow_insulin_solve.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import 'package:diabetichero_app/data/models/time_controller/2_sonde_range.dart';
-import 'package:diabetichero_app/logic/1_patient_blocs/medical_blocs/sonde_blocs/check_insulin_submit_bloc.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/1.sonde_logic/check_insulin_submit_bloc.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/0_nice_screen.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/2_nice_button.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../../../../data/models/1.sonde/7.2_sonde_procedure_online_cubit.dart';
-import '../../../../../data/models/medical/6_procedure_state.dart';
+import '../../../../../data/models/0.medical/6_procedure_state.dart';
 
 class GiveGlargine extends StatelessWidget {
   //add sondeProcedureOnlineCubit

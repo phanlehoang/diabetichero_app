@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../2_profile.dart';
+import '../manager/2_profile.dart';
 import '../enum/enums.dart';
 import '1.mouth_regimen.dart';
 import '2.mouth_procedure.dart';

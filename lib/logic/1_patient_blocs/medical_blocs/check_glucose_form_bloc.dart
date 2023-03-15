@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
-import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
-import '../../../../data/models/models_export.dart';
+import '../../../data/models/0.medical/medical_action/2_medical_check_glucose.dart';
+import '../../../data/models/manager/models_export.dart';
 
 class CheckGlucoseForm extends FormBloc<String, String> {
   @override

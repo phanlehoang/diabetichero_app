@@ -10,8 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../../data/models/1.sonde/7.2_sonde_procedure_online_cubit.dart';
-import '../../../data/models/2.3_current_profile_cubit.dart';
-import '../../../data/models/2_profile.dart';
+import '../../../data/models/manager/2.3_current_profile_cubit.dart';
+import '../../../data/models/manager/2_profile.dart';
 import '../../../data/models/2.TPN/3_TPN_procedure_online_cubit.dart';
 import '../../../data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import '../../widgets/bars/bottom_navitgator_bar.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../medical/7_medical_procedure.dart';
+import '../0.medical/7_medical_procedure.dart';
 
 class SondeProcedure extends MedicalProcedure {
   String status;

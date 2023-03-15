@@ -1,6 +1,6 @@
 import 'package:diabetichero_app/data/models/3.mouth/2.mouth_procedure.dart';
-import 'package:diabetichero_app/data/models/medical/4_regimen.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/day_segment_range.dart';
 
 class HypoGlycemiaNoInsulinLogic {

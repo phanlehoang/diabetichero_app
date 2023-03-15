@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../2_profile.dart';
+import '../manager/2_profile.dart';
 import '../enum/enums.dart';
 import '../time_controller/2_sonde_range.dart';
 import '../time_controller/3_TPN_range.dart';

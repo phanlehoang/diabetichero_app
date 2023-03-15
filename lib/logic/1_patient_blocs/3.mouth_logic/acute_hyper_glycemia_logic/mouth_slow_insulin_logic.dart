@@ -1,9 +1,9 @@
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/4_mouth_range.dart';
 
 import '../../../../data/models/3.mouth/2.mouth_procedure.dart';
-import '../../../../data/models/medical/medical_action/3_medical_take_insulin.dart';
+import '../../../../data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 
 class MouthSlowInsulinLogic {
   List<InsulinType> slowInsulinTypes = [

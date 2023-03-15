@@ -1,5 +1,5 @@
-import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/4_medical_meal.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/4_medical_meal.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';
 import 'package:flutter/material.dart';
 

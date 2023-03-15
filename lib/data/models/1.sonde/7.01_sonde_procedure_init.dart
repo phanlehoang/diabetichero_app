@@ -1,7 +1,7 @@
 import '../enum/enums.dart';
-import '../medical/4_regimen.dart';
-import '../medical/6_procedure_state.dart';
-import '../medical/7_medical_procedure.dart';
+import '../0.medical/4_regimen.dart';
+import '../0.medical/6_procedure_state.dart';
+import '../0.medical/7_medical_procedure.dart';
 import '7_sonde_procedure.dart';
 
 class SondeProcedureInit {

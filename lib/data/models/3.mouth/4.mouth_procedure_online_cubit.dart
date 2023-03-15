@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import '../2_profile.dart';
+import '../manager/2_profile.dart';
 import '../enum/enums.dart';
 import '1.mouth_regimen.dart';
 import '2.mouth_procedure.dart';

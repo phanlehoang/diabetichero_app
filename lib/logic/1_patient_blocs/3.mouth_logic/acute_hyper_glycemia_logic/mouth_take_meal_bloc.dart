@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/4_medical_meal.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/4_medical_meal.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 class MouthTakeMealBloc extends FormBloc<String, String> {

@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-import '../../models/2_profile.dart';
-import '../../models/medical/6_procedure_state.dart';
+import '../../models/manager/2_profile.dart';
+import '../../models/0.medical/6_procedure_state.dart';
 
 class SondeStatusUpdate {
   static Future<String?> updateSondeStatus({

@@ -3,8 +3,8 @@
 import 'package:diabetichero_app/authentication/decoration/0_diagonal_streak_decoration_screen.dart';
 import 'package:diabetichero_app/authentication/decoration/2_doctor_image_login.dart';
 import 'package:diabetichero_app/authentication/decoration/welcome_back_widget.dart';
-import 'package:diabetichero_app/data/models/doctor/current_doctor.dart';
-import 'package:diabetichero_app/data/models/doctor/doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/current_doctor.dart';
+import 'package:diabetichero_app/data/models/manager/doctor/doctor.dart';
 import 'package:diabetichero_app/logic/global/current_export.dart';
 import 'package:diabetichero_app/presentation/widgets/status/loading_dialog.dart';
 import 'package:flutter/material.dart';

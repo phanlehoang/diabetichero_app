@@ -1,5 +1,5 @@
 import 'package:diabetichero_app/data/models/3.mouth/2.mouth_procedure.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 
 class HypoGlycemiaYesInsulinLogic {
   final MouthProcedure mouthProcedure;

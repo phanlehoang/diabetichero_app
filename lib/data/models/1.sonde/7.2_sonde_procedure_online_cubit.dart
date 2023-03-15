@@ -5,10 +5,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../enum/enums.dart';
-import '../medical/4_regimen.dart';
-import '../2_profile.dart';
-import '../medical/6_procedure_state.dart';
-import '../medical/7.1_medical_procedure_cubit.dart';
+import '../0.medical/4_regimen.dart';
+import '../manager/2_profile.dart';
+import '../0.medical/6_procedure_state.dart';
+import '../0.medical/7.1_medical_procedure_cubit.dart';
 import '7_sonde_procedure.dart';
 
 class SondeProcedureOnlineCubit extends MedicalProcedureCubit {

@@ -1,4 +1,4 @@
-import 'package:diabetichero_app/logic/1_patient_blocs/medical_blocs/sonde_blocs/choose_slow_insulin_form_bloc.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/1.sonde_logic/choose_slow_insulin_form_bloc.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/2_nice_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

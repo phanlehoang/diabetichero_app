@@ -6,9 +6,7 @@ class Patient {
   String currentProcedureId;
   Patient({
     required this.profile,
-    required this.procedures, 
+    required this.procedures,
     this.currentProcedureId = 'Unknown',
   });
 }
-
-

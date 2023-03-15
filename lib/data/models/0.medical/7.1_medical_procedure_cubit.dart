@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/models_export.dart';
+import 'package:diabetichero_app/data/models/manager/models_export.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../1.sonde/7_sonde_procedure.dart';

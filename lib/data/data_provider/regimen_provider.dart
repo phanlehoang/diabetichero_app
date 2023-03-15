@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/2_medical_check_glucose.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/3_medical_take_insulin.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-import '../models/medical/4_regimen.dart';
-import '../models/2_profile.dart';
+import '../models/0.medical/4_regimen.dart';
+import '../models/manager/2_profile.dart';
 
 //viết hàm chèn thêm số 0 vào để có đúng 3 chữ số
 String addZero(int number) {

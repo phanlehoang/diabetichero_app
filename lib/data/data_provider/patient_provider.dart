@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../models/2_profile.dart';
+import '../models/manager/2_profile.dart';
 
 class PatientCreate {
   //create a group in firebase
@@ -11,8 +11,8 @@ class PatientCreate {
         .doc(map['room'])
         .collection('patients')
         .doc(map['id'])
-   .set({'profile': map});
-    }
+        .set({'profile': map});
+  }
 }
 
 class PatientRead {
@@ -34,11 +34,15 @@ class PatientRead {
     return null;
   }
 }
-class PatientRef{
-  static DocumentReference getPatientRef(Profile profile){
+
+class PatientRef {
+  static DocumentReference getPatientRef(Profile profile) {
     var db = FirebaseFirestore.instance;
-    var ref = db.collection('groups')
-    .doc(profile.room).collection('patients').doc(profile.id);
+    var ref = db
+        .collection('groups')
+        .doc(profile.room)
+        .collection('patients')
+        .doc(profile.id);
     return ref;
   }
 }

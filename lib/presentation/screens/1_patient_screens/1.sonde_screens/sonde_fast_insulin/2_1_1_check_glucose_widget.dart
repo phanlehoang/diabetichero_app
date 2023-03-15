@@ -8,8 +8,8 @@ import 'package:diabetichero_app/data/data_provider/regimen_provider.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/nice_export.dart';
 
 import '../../../../../data/models/enum/enums.dart';
-import '../../../../../data/models/models_export.dart';
-import '../../../../../logic/1_patient_blocs/medical_blocs/sonde_blocs/check_glucose_form_bloc.dart';
+import '../../../../../data/models/manager/models_export.dart';
+import '../../../../../logic/1_patient_blocs/medical_blocs/check_glucose_form_bloc.dart';
 
 class CheckGlucoseWidget extends StatelessWidget {
   const CheckGlucoseWidget({

@@ -1,7 +1,7 @@
 //create procedure screen
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:diabetichero_app/data/models/2_profile.dart';
-import 'package:diabetichero_app/data/models/2.3_current_profile_cubit.dart';
+import 'package:diabetichero_app/data/models/manager/2_profile.dart';
+import 'package:diabetichero_app/data/models/manager/2.3_current_profile_cubit.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/2_nice_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

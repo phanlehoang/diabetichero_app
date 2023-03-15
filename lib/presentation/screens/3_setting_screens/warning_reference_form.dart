@@ -12,7 +12,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 //import reference_warning_reference_form_bloc.dart
 import '../../../logic/status_cubit/reference_warning_cubit.dart';
-import '../../../data/models/doctor/current_doctor.dart';
+import '../../../data/models/manager/doctor/current_doctor.dart';
 import '../../widgets/bars/bottom_navitgator_bar.dart';
 import '../../widgets/nice_widgets/1_nice_container.dart';
 

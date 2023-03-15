@@ -8,7 +8,7 @@ import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../data/data_provider/patient_provider.dart';
-import '../../data/models/2_profile.dart';
+import '../../data/models/manager/2_profile.dart';
 import '../../data/models/2.TPN/1_TPN_procedure.dart';
 import '../../data/models/2.TPN/2_TPN_procedure_init.dart';
 import '../../presentation/widgets/vietnamese/vietnamese_field_bloc_validators.dart';

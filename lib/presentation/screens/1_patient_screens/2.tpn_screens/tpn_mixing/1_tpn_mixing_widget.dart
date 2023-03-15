@@ -1,6 +1,6 @@
 import 'package:diabetichero_app/data/models/2.TPN/3_TPN_procedure_online_cubit.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
-import 'package:diabetichero_app/data/models/medical/medical_action/2.1_medical_mixing.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2.1_medical_mixing.dart';
 import 'package:diabetichero_app/data/models/time_controller/3_TPN_range.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/tpn_mixing/tpn_mixing_status_logic.dart';
 import 'package:diabetichero_app/presentation/widgets/status/show_toast.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../../../../data/models/2.TPN/1_TPN_procedure.dart';
-import '../../../../../data/models/medical/7_medical_procedure.dart';
+import '../../../../../data/models/0.medical/7_medical_procedure.dart';
 import '../../../../widgets/nice_widgets/nice_export.dart';
 import '../../../../widgets/status/loading_dialog.dart';
 import '0.2_mixing_guide.dart';

@@ -9,7 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'authentication/login_screen/1_login_screen.dart';
-import 'data/models/2.3_current_profile_cubit.dart';
+import 'data/models/manager/2.3_current_profile_cubit.dart';
 import 'firebase_options.dart';
 import 'package:path_provider/path_provider.dart';
 

@@ -2,7 +2,7 @@ import 'package:diabetichero_app/presentation/widgets/nice_widgets/1_nice_contai
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../../../data/models/medical/medical_action/2_medical_check_glucose.dart';
+import '../../../../data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 import 'dongs_chart.dart';
 import 'nice_date_time.dart';
 
