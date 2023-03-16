@@ -1,5 +1,7 @@
 import 'package:diabetichero_app/data/data_provider/patient_provider.dart';
 import 'package:diabetichero_app/data/models/enum/enums.dart';
+import 'package:diabetichero_app/data/models/time_controller/2_sonde_range.dart';
+import 'package:diabetichero_app/logic/status_cubit/range_cubit.dart';
 import 'package:diabetichero_app/logic/status_cubit/reference_warning_cubit.dart';
 import 'package:diabetichero_app/logic/status_cubit/time_check/time_check_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/2.tpn_screens/0_tpn_screen.dart';
@@ -39,6 +41,8 @@ class PatientMedicalScreen extends StatelessWidget {
               switch (st.procedureType) {
                 case ProcedureType.Sonde:
                   return SondeScreen(
+                    rangeCubit: RangeCubit(
+                        ActrapidRange().rangeContainToday(DateTime.now())),
                     sondeProcedureOnlineCubit: SondeProcedureOnlineCubit(
                       profile: context.read<CurrentProfileCubit>().state,
                       procedureId: sondeProcedureId,
