@@ -33,6 +33,9 @@ enum MouthProcedureStatus {
   hypoGlycemiaYesInsulin, //bị hạ đường huyết và có insulin
   thirdAsk,
   baseBolus,
+  inpatient,
+  outpatient,
+  in_or_out_patient_ask,
   endocrineConference, //hội chẩn nội tiết
   finish,
 }

@@ -4,6 +4,8 @@ import 'package:diabetichero_app/data/models/time_controller/4_mouth_range/day_s
 import 'package:diabetichero_app/logic/status_cubit/range_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/2_mouth_first_ask_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/3_mouth_second_ask_widget.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/in_or_out_patient_ask_screen.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/third_ask_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/3.1_mouth_hypo_glycemia.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_no_insulin/mouth_hypo_glycemia_no_insulin.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_yes_insulin/mouth_hypo_glycemia_yes_insulin.dart';
@@ -55,6 +57,12 @@ class MouthStatusWidget extends StatelessWidget {
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           case MouthProcedureStatus.endocrineConference:
             return Text('Hội chẩn nội tiết');
+          case MouthProcedureStatus.thirdAsk:
+            return ThirdAskScreen(
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+          case MouthProcedureStatus.in_or_out_patient_ask:
+            return InOrOutPatientAskScreen(
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           default:
             return Text('chua lam');
         }

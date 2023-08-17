@@ -100,6 +100,12 @@ class StringToEnum {
         return MouthProcedureStatus.thirdAsk;
       case 'baseBolus':
         return MouthProcedureStatus.baseBolus;
+      case 'inpatient':
+        return MouthProcedureStatus.inpatient;
+      case 'outpatient':
+        return MouthProcedureStatus.outpatient;
+      case 'in_or_out_patient_ask':
+        return MouthProcedureStatus.in_or_out_patient_ask;
       case 'endocrineConference':
         return MouthProcedureStatus.endocrineConference;
       case 'finish':
