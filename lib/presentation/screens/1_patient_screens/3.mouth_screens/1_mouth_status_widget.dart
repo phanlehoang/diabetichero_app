@@ -5,6 +5,7 @@ import 'package:diabetichero_app/logic/status_cubit/range_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/2_mouth_first_ask_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/3_mouth_second_ask_widget.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/in_or_out_patient_ask_screen.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/out_patient_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/third_ask_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/3.1_mouth_hypo_glycemia.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_no_insulin/mouth_hypo_glycemia_no_insulin.dart';
@@ -63,6 +64,11 @@ class MouthStatusWidget extends StatelessWidget {
           case MouthProcedureStatus.in_or_out_patient_ask:
             return InOrOutPatientAskScreen(
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+          case MouthProcedureStatus.outpatient:
+            return OutPatientScreen(
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+          case MouthProcedureStatus.inpatient:
+            return Text('inpatient');
           default:
             return Text('chua lam');
         }

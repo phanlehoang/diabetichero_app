@@ -24,7 +24,7 @@ class InOrOutPatientAskScreen extends StatelessWidget {
                 showToast('có lỗi xảy ra');
               },
               child: Column(children: [
-                Text('Tiền sử ĐTĐ'),
+                Text('Kiểu điều trị'),
                 RadioButtonGroupFieldBlocBuilder(
                   selectFieldBloc: formBloc.inOrOutPatient,
                   itemBuilder: (context, value) =>

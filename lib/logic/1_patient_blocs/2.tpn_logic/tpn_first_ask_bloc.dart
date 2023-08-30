@@ -8,7 +8,7 @@ import '../../../presentation/widgets/vietnamese/vietnamese_field_bloc_validator
 class TPNFirstAskBloc extends FormBloc<String, String> {
   final TPNProcedureOnlineCubit procedureOnlineCubit;
   final yesOrNoInsulin = SelectFieldBloc(
-    items: ['Có', 'Khôngc'],
+    items: ['Có', 'Không'],
     validators: [VietnameseFieldBlocValidators.required],
   );
 
