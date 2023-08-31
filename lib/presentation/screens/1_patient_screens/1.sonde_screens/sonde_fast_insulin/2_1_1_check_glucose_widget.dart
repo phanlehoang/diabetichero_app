@@ -48,10 +48,7 @@ class CheckGlucoseWidget extends StatelessWidget {
                       width: 100,
                       child: TextFieldBlocBuilder(
                         textFieldBloc: formBloc.glucose,
-                        keyboardType: TextInputType.numberWithOptions(
-                          decimal: true,
-                          signed: false,
-                        ),
+                        keyboardType: TextInputType.number,
                       ),
                     ),
                     NiceButton(

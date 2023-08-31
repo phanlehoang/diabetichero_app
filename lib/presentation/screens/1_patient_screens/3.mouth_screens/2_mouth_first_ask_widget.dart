@@ -57,10 +57,7 @@ class MouthFirstAskWidget extends StatelessWidget {
                             'Kiểm tra các tiêu chuẩn tăng đường huyết cấp tính'),
                         TextFieldBlocBuilder(
                             textFieldBloc: formBloc.fastingGlucose,
-                            keyboardType: TextInputType.numberWithOptions(
-                              decimal: true,
-                              signed: false,
-                            ),
+                            keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               labelText: 'Lượng glucose lúc đói (mmol/L)',
                               prefixIcon:
@@ -69,10 +66,7 @@ class MouthFirstAskWidget extends StatelessWidget {
                             )),
                         TextFieldBlocBuilder(
                             textFieldBloc: formBloc.casualGlucose,
-                            keyboardType: TextInputType.numberWithOptions(
-                              decimal: true,
-                              signed: false,
-                            ),
+                            keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               labelText: 'Lượng glucose máu bất kì (mmol/L)',
                               prefixIcon:
@@ -81,10 +75,7 @@ class MouthFirstAskWidget extends StatelessWidget {
                             )),
                         TextFieldBlocBuilder(
                             textFieldBloc: formBloc.hba1c,
-                            keyboardType: TextInputType.numberWithOptions(
-                              decimal: true,
-                              signed: false,
-                            ),
+                            keyboardType: TextInputType.text,
                             decoration: InputDecoration(
                               labelText: 'HbA1c (%)',
                               prefixIcon:

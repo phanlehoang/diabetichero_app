@@ -12,10 +12,7 @@ FormBlocStep weightHeightStep(WizardFormBloc wizardFormBloc) {
       children: <Widget>[
         TextFieldBlocBuilder(
           textFieldBloc: wizardFormBloc.weight,
-          keyboardType: TextInputType.numberWithOptions(
-            decimal: true,
-            signed: false,
-          ),
+          keyboardType: TextInputType.text,
           decoration: const InputDecoration(
             labelText: 'Cân nặng (kg)',
             prefixIcon: Icon(Icons.person),
@@ -23,10 +20,7 @@ FormBlocStep weightHeightStep(WizardFormBloc wizardFormBloc) {
         ),
         TextFieldBlocBuilder(
           textFieldBloc: wizardFormBloc.height,
-          keyboardType: TextInputType.numberWithOptions(
-            decimal: true,
-            signed: false,
-          ),
+          keyboardType: TextInputType.text,
           decoration: const InputDecoration(
             labelText: 'Chiều cao (cm)',
           ),

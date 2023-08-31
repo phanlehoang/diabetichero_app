@@ -59,10 +59,7 @@ class FirstAskWidget extends StatelessWidget {
                         Text('Nhập lượng CHO (g)'),
                         TextFieldBlocBuilder(
                           textFieldBloc: formBloc.getCHO,
-                          keyboardType: TextInputType.numberWithOptions(
-                            decimal: true,
-                            signed: false,
-                          ),
+                          keyboardType: TextInputType.text,
                         ),
                         NiceButton(
                           onTap: formBloc.submit,

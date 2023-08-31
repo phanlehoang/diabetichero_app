@@ -66,7 +66,7 @@ class CreateProcedureForm extends StatelessWidget {
             ),
             //submit button
             NiceButton(
-              text: 'Tạo phác đồ',
+              text: 'Tạo phác đồ mới',
               onTap: () => context.read<CreateProcedureFormBloc>().submit(),
             ),
           ],

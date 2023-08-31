@@ -52,10 +52,7 @@ class MouthRealFastInsulin extends StatelessWidget {
                 children: [
                   TextFieldBlocBuilder(
                     textFieldBloc: formBloc.insulinUI,
-                    keyboardType: TextInputType.numberWithOptions(
-                      decimal: true,
-                      signed: false,
-                    ),
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: 'Insulin UI',
                       prefixIcon: Icon(Icons.medical_services),

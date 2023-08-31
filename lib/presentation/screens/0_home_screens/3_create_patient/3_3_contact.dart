@@ -21,7 +21,7 @@ FormBlocStep contactAddressStep(WizardFormBloc thisFormBloc) {
         ),
         TextFieldBlocBuilder(
           textFieldBloc: thisFormBloc.phone,
-          keyboardType: TextInputType.phone,
+          keyboardType: TextInputType.text,
           decoration: InputDecoration(
             labelText: 'Số điện thoại',
             prefixIcon: Icon(Icons.phone),
