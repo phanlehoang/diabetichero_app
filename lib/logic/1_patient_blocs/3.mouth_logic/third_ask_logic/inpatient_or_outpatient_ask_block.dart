@@ -43,7 +43,7 @@ class InpatientOrOutpatientAskBloc extends FormBloc<String, String> {
               .updateProcedureStatus(MouthProcedureStatus.inpatient);
           emitSuccess();
           break;
-        case 'Ngoại trú':
+        default:
           //làm tương tự như trên nhưng thay YesInsulin thành NoInsulin
           MouthRegimen mouthRegimen = MouthRegimen(
             name: 'Phác đồ ngoại trú',
@@ -59,7 +59,6 @@ class InpatientOrOutpatientAskBloc extends FormBloc<String, String> {
               .updateProcedureStatus(MouthProcedureStatus.outpatient);
           emitSuccess();
           break;
-        default:
       }
     } catch (e) {
       emitFailure();

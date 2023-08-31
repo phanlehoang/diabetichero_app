@@ -30,6 +30,9 @@ class MouthHypoGlycemiaNoInsulin extends StatelessWidget {
               textAlign: TextAlign.center, //center
             ),
           ),
+          Center(
+            child: Text('Ngừng thuốc'),
+          ),
           SimpleContainer(
             child: BlocBuilder(
               bloc: mouthProcedureOnlineCubit,
