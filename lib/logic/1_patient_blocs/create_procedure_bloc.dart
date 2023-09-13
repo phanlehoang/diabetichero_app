@@ -8,6 +8,8 @@ import 'package:diabetichero_app/data/models/enum/enums.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 import '../../data/data_provider/patient_provider.dart';
+import '../../data/models/4.fasting/1.fasting_procedure_init.dart';
+import '../../data/models/4.fasting/2.fasting_procedure.dart';
 import '../../data/models/manager/2_profile.dart';
 import '../../data/models/2.TPN/1_TPN_procedure.dart';
 import '../../data/models/2.TPN/2_TPN_procedure_init.dart';
@@ -66,6 +68,15 @@ class CreateProcedureFormBloc extends FormBloc<String, String> {
           .collection('procedures')
           .doc(mouthProcedure.beginTime.toString())
           .set(mouthProcedure.toDataMap);
+    }
+    if (method.value == 'ĐTĐ nhịn ăn') {
+      //tpn init procedure
+      final FastingProcedure fastingProcedure =
+          FastingProcedureInit.firstAsk(profile.weight);
+      var addProcedure = await PatientRef.getPatientRef(profile)
+          .collection('procedures')
+          .doc(fastingProcedure.beginTime.toString())
+          .set(fastingProcedure.toDataMap());
     }
   }
 }

@@ -12,6 +12,7 @@ enum ProcedureType {
   TPN,
   Sonde,
   Mouth,
+  Fasting,
   Unknown,
 }
 

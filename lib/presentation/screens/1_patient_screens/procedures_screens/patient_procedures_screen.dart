@@ -6,6 +6,7 @@ import 'package:diabetichero_app/data/models/0.medical/4_regimen.dart';
 import 'package:diabetichero_app/logic/status_cubit/navigator_bar_cubit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/TPN_procedure_item.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/create_procedure.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/fasting_procedures_item.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/procedures_screens/sonde_procedure_item.dart';
 import 'package:diabetichero_app/presentation/widgets/nice_widgets/nice_export.dart';
 import 'package:flutter/material.dart';
@@ -119,7 +120,11 @@ class ListProcedures extends StatelessWidget {
                 procedure: procedureRef.data(),
                 procedureId: procedureRef.id,
               ));
-
+            else if (procedureRef['name'] == 'FastingProcedure')
+              procedureItems.add(FastingProcedureItem(
+                procedure: procedureRef.data(),
+                procedureId: procedureRef.id,
+              ));
           return Column(
             children: [
               Text('Các phác đồ đã thực hiện'),

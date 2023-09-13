@@ -62,6 +62,13 @@ class PatientMedicalScreen extends StatelessWidget {
                       procedureId: sondeProcedureId,
                     ),
                   );
+                // case ProcedureType.Fasting:
+                //   return FastingScreen(
+                //     tPNProcedureOnlineCubit: TPNProcedureOnlineCubit(
+                //       profile: context.read<CurrentProfileCubit>().state,
+                //       procedureId: sondeProcedureId,
+                //     ),
+                //     );
                 case ProcedureType.Unknown:
                   return Text('Unknown');
 

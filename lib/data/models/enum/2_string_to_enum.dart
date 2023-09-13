@@ -20,6 +20,8 @@ class StringToEnum {
         return ProcedureType.Sonde;
       case 'Mouth':
         return ProcedureType.Mouth;
+      case 'ĐTĐ nhịn ăn':
+        return ProcedureType.Fasting;
       default:
         return ProcedureType.Unknown;
     }
@@ -112,6 +114,26 @@ class StringToEnum {
         return MouthProcedureStatus.finish;
       default:
         return MouthProcedureStatus.firstAsk;
+    }
+  }
+
+  //FastingStatus
+  static ProcedureStatus stringToFastingStatus(String s) {
+    switch (s) {
+      case 'firstAsk':
+        return ProcedureStatus.firstAsk;
+      case 'noInsulin':
+        return ProcedureStatus.noInsulin;
+
+      case 'yesInsulin':
+        return ProcedureStatus.yesInsulin;
+
+      case 'highInsulin':
+        return ProcedureStatus.highInsulin;
+      case 'finish':
+        return ProcedureStatus.finish;
+      default:
+        return ProcedureStatus.firstAsk;
     }
   }
 }
