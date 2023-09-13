@@ -18,7 +18,7 @@ import '../../presentation/widgets/vietnamese/vietnamese_field_bloc_validators.d
 class CreateProcedureFormBloc extends FormBloc<String, String> {
   final Profile profile;
   final method = SelectFieldBloc(
-    items: ['TPN', 'Sonde', 'Miệng', 'ĐTĐ nhịn ăn'],
+    items: ['TPN', 'Sonde', 'Truyền Miệng', 'ĐTĐ nhịn ăn'],
     validators: [VietnameseFieldBlocValidators.required],
   );
   @override
@@ -57,7 +57,7 @@ class CreateProcedureFormBloc extends FormBloc<String, String> {
           .doc(tpnProcedure.beginTime.toString())
           .set(tpnProcedure.toDataMap());
     }
-    if (method.value == 'Miệng') {
+    if (method.value == 'Truyền Miệng') {
       //mouth init procedure
       final MouthProcedure mouthProcedure = MouthProcedure(
           beginTime: DateTime.now(),
