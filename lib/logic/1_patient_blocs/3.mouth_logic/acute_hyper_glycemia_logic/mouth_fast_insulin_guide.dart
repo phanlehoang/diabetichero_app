@@ -26,7 +26,7 @@ class MouthFastInsulinGuide {
 
   MouthFastInsulinGuide(this.mouthProcedure);
   static num insulinUI(num weight) {
-    return (weight * 0.05).round();
+    return (weight * 0.1).round();
   }
 
   num get lastGlucoseAmount {
