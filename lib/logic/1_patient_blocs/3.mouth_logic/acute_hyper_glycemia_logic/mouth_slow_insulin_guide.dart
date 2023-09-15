@@ -13,6 +13,7 @@ class MouthSlowInsulinGuide {
       insulinUI: insulinUI(weight),
       insulinType: InsulinType.Slow,
       time: DateTime.now(),
+      // recommendedInsulinUI: insulinUI(weight),
     );
   }
 }

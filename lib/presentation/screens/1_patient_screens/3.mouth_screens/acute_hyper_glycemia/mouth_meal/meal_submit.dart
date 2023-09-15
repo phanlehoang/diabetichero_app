@@ -30,14 +30,18 @@ class MealSubmit extends StatelessWidget {
                   child: Column(
                     children: [
                       TextFieldBlocBuilder(
+                        // bổ sung thêm text cố định 'Luogwj ăn'
                         textFieldBloc: bloc.description,
                         decoration: InputDecoration(
-                          labelText: 'Mô tả bữa ăn',
+                          labelText: 'Mô tả lượng ăn',
+                          prefixText: 'Lượng ăn ',
                           prefixIcon: Icon(Icons.food_bank),
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: bloc.submit,
+                        onPressed: () {
+                          bloc.submit();
+                        },
                         child: Text('Bắt đầu ăn'),
                       ),
                     ],

@@ -11,7 +11,7 @@ class MouthTakeFastInsulinBloc extends FormBloc<String, String> {
   final logicGuide;
   final insulinUI = TextFieldBloc();
   final insulinType = SelectFieldBloc(
-    items: ['Actrapid', 'NovoRapid'],
+    items: ['Actrapid', 'NovoRapid', 'Humalog_kwikpen'],
     // validators: [FieldBlocValidators.required],
   );
 

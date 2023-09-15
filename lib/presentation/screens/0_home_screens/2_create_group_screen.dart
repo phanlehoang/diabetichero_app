@@ -65,7 +65,7 @@ class CreateGroupScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: formBloc.submit,
-                      child: Text('Nộp'),
+                      child: Text('Tạo nhóm'),
                     ),
                   ],
                 ),

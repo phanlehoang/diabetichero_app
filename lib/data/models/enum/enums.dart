@@ -69,6 +69,7 @@ enum InsulinType {
   //fast
   Actrapid,
   NovoRapid,
+  Humalog_kwikpen,
   Fast,
 
   Unknown,

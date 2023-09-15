@@ -12,6 +12,7 @@ class MouthFastInsulinLogic {
     //Actrapid và novorapid
     InsulinType.Actrapid,
     InsulinType.NovoRapid,
+    InsulinType.Humalog_kwikpen,
     InsulinType.Fast,
   ];
   final MouthProcedure mouthProcedure;

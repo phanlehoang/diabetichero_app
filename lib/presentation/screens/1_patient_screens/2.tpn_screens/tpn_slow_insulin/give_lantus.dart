@@ -61,9 +61,11 @@ class GuideLantus extends StatelessWidget {
     final CheckedInsulinSubmit checkedInsulinSubmitBloc = CheckedInsulinSubmit(
         procedureOnlineCubit: tpnProcedureOnlineCubit,
         medicalTakeInsulin: MedicalTakeInsulin(
-            insulinType: InsulinType.Lantus,
-            time: DateTime.now(),
-            insulinUI: insulinAmount));
+          insulinType: InsulinType.Lantus,
+          time: DateTime.now(),
+          insulinUI: insulinAmount,
+          // recommendedInsulinUI: insulinAmount
+        ));
 
     return FormBlocListener(
       formBloc: checkedInsulinSubmitBloc,

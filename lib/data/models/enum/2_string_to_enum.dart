@@ -72,6 +72,8 @@ class StringToEnum {
         return InsulinType.Actrapid;
       case 'NovoRapid':
         return InsulinType.NovoRapid;
+      case 'Humalog_kwikpen':
+        return InsulinType.Humalog_kwikpen;
 
       default:
         return InsulinType.Unknown;

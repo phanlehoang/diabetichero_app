@@ -1,5 +1,6 @@
 import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 import 'package:diabetichero_app/data/models/0.medical/medical_action/4_medical_meal.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/acute_hyper_glycemia/mouth_meal/meal_submit.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/history_widget/nice_date_time.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class MedicalMealItem extends StatelessWidget {
     String d = NiceDateTime.dayMonth(t);
     return SimpleContainer(
       child: ListTile(
-          title: Text('Ăn'),
+          // in nội dunng mô tả bữa ăn trong meal_submit.dart
+          title: Text(medicalMeal.description),
           trailing: Column(
             children: [
               Text(d),

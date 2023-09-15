@@ -45,6 +45,7 @@ class MouthHypoGlycemiaFastInsulinGuide {
           insulinType: InsulinType.Fast,
           time: DateTime.now(),
           insulinUI: 0,
+          // recommendedInsulinUI: 0,
         );
       case GlucoseEvaluation.normal:
         bonus = 0;
@@ -62,6 +63,7 @@ class MouthHypoGlycemiaFastInsulinGuide {
       insulinType: InsulinType.Fast,
       time: DateTime.now(),
       insulinUI: bonus,
+      // recommendedInsulinUI: bonus,
     );
   }
 
@@ -74,13 +76,13 @@ class MouthHypoGlycemiaFastInsulinGuide {
         return Text('Không tiêm insulin tác dụng nhanh.');
       case GlucoseEvaluation.high:
         return Text(
-            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid)');
+            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid, Humalog_kwikpen)');
       case GlucoseEvaluation.superHigh:
         return Text(
-            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid)');
+            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid, Humalog_kwikpen)');
       case GlucoseEvaluation.extremelyHigh:
         return Text(
-            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid)');
+            'Tiêm ${medicalTakeInsulin.insulinUI} UI insulin tác dụng nhanh(Actrapid, NovoRapid, Humalog_kwikpen)');
       default:
         return Container();
     }

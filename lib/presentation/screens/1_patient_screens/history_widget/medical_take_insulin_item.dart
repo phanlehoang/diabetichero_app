@@ -22,7 +22,15 @@ class MedicalTakeInsulinItem extends StatelessWidget {
       child: ListTile(
           title: Text(
               'Tiêm Insulin ${EnumToString.enumToString(medicalTakeInsulin.insulinType)}'),
-          subtitle: Text(medicalTakeInsulin.insulinUI.toString() + ' UI'),
+          // Bổ sunng liều tiêm đề xuất
+
+          subtitle: Text('Đề xuất: ' +
+              medicalTakeInsulin.insulinUI.toString() +
+              ' UI'
+                  "   " +
+              'Thực tế: ' +
+              medicalTakeInsulin.insulinUI.toString() +
+              ' UI'),
           trailing: Column(
             children: [
               Text(d),

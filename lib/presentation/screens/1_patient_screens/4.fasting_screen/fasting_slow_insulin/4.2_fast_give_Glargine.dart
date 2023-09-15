@@ -65,9 +65,11 @@ class GuideGlargine extends StatelessWidget {
         FastCheckedInsulinSubmit(
             procedureOnlineCubit: fastProcedureOnlineCubit,
             medicalTakeInsulin: MedicalTakeInsulin(
-                insulinType: InsulinType.Glargine,
-                time: DateTime.now(),
-                insulinUI: insulinAmount));
+              insulinType: InsulinType.Glargine,
+              time: DateTime.now(),
+              insulinUI: insulinAmount,
+              // recommendedInsulinUI: insulinAmount
+            ));
 
     return FormBlocListener(
       formBloc: checkedInsulinSubmitBloc,

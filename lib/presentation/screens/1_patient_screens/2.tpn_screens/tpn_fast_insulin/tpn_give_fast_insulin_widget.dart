@@ -60,6 +60,7 @@ class TPNGiveFastInsulinWidget extends StatelessWidget {
                                   time: DateTime.now(),
                                   insulinType: InsulinType.Actrapid,
                                   insulinUI: insulin,
+                                  // recommendedInsulinUI: insulin,
                                 ),
                               ),
                           child: Builder(builder: (_) {

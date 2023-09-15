@@ -7,10 +7,12 @@ import '1_medical_action.dart';
 class MedicalTakeInsulin extends MedicalAction {
   InsulinType insulinType;
   num insulinUI;
+  // num recommendedInsulinUI;
   MedicalTakeInsulin({
     required this.insulinType,
     required super.time,
     required this.insulinUI,
+    // required this.recommendedInsulinUI,
   });
 
   List<Object?> get props => [this.time, this.insulinType, this.insulinUI];
@@ -19,6 +21,7 @@ class MedicalTakeInsulin extends MedicalAction {
       insulinType: insulinType,
       time: time,
       insulinUI: insulinUI,
+      // recommendedInsulinUI: recommendedInsulinUI,
     );
   }
 
@@ -29,6 +32,7 @@ class MedicalTakeInsulin extends MedicalAction {
       'time': time,
       'insulinType': EnumToString.enumToString(insulinType),
       'insulinUI': insulinUI,
+      // 'recommendedInsulinUI': recommendedInsulinUI,
     };
   }
 
@@ -40,6 +44,7 @@ class MedicalTakeInsulin extends MedicalAction {
         insulinType: StringToEnum.stringToInsulinType(map['insulinType']),
         time: map['time'].toDate(),
         insulinUI: map['insulinUI'],
+        // recommendedInsulinUI: map['recommendedInsulinUI'],
       );
     } catch (e) {
       return errorMedicalTakeInsulin;
@@ -63,4 +68,5 @@ MedicalTakeInsulin errorMedicalTakeInsulin = MedicalTakeInsulin(
   insulinType: InsulinType.Actrapid,
   time: DateTime(1999),
   insulinUI: 0,
+  // recommendedInsulinUI: 0,
 );

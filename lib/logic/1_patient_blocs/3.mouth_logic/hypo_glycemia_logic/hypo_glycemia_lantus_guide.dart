@@ -9,6 +9,7 @@ class HypoGlycemiaLantusGuide {
       time: DateTime.now(),
       insulinUI: 0.2 * weight,
       insulinType: InsulinType.Lantus,
+      // recommendedInsulinUI: 0.2 * weight,
     );
   }
 }

@@ -58,6 +58,28 @@ class FindGroup extends StatelessWidget {
                     //hint text
                     hintText: currentGroupId.state,
                     prefixIcon: Icon(Icons.search),
+                    // Create recommend button search các nhóm có sẵn
+                    suffixIcon: PopupMenuButton(
+                      icon: Icon(Icons.arrow_drop_down),
+                      itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: Text('BSNT'),
+                          value: 'BSNT',
+                        ),
+                        PopupMenuItem(
+                          child: Text('Phòng 14'),
+                          value: 'Phòng 14',
+                        ),
+                        PopupMenuItem(
+                          child: Text('1234'),
+                          value: '1234',
+                        ),
+                      ],
+                      onSelected: (value) {
+                        formBloc.groupId.updateValue(value);
+                        currentGroupId.update(value);
+                      },
+                    ),
                   ),
                 ),
                 Text('Mã nhóm hiện tại là: ' + currentGroupId.state),

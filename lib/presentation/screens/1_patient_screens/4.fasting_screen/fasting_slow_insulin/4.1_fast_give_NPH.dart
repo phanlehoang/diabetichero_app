@@ -65,9 +65,11 @@ class GuideNPH extends StatelessWidget {
         FastCheckedInsulinSubmit(
             procedureOnlineCubit: fastingProcedureOnlineCubit,
             medicalTakeInsulin: MedicalTakeInsulin(
-                insulinType: InsulinType.NPH,
-                time: DateTime.now(),
-                insulinUI: insulinAmount));
+              insulinType: InsulinType.NPH,
+              time: DateTime.now(),
+              insulinUI: insulinAmount,
+              // recommendedInsulinUI: insulinAmount
+            ));
 
     return FormBlocListener(
       formBloc: checkedInsulinSubmitBloc,

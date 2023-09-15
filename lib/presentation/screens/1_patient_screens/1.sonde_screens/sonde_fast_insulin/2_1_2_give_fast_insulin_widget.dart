@@ -67,6 +67,7 @@ class GiveInsulinWidget extends StatelessWidget {
                                   time: DateTime.now(),
                                   insulinType: InsulinType.Actrapid,
                                   insulinUI: insulin,
+                                  // recommendedInsulinUI: insulin,
                                 ),
                                 plus: plus,
                               ),
