@@ -25,7 +25,7 @@ class MedicalTakeInsulinItem extends StatelessWidget {
           // Bổ sunng liều tiêm đề xuất
 
           subtitle: Text('Đề xuất: ' +
-              medicalTakeInsulin.insulinUI.toString() +
+              medicalTakeInsulin.recommendedInsulinUI.toString() +
               ' UI'
                   "   " +
               'Thực tế: ' +

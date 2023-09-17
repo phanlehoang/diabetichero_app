@@ -9,6 +9,7 @@ class MedicalMeal extends MedicalAction {
   //props
   @override
   List<Object?> get props => [this.time];
+
   // @override
   @override
   String toString() {

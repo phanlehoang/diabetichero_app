@@ -8,6 +8,7 @@ import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/in_patient_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/out_patient_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/chronic_patient/third_ask_screen.dart';
+import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/endocrineConference_screen.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/3.1_mouth_hypo_glycemia.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_no_insulin/mouth_hypo_glycemia_no_insulin.dart';
 import 'package:diabetichero_app/presentation/screens/1_patient_screens/3.mouth_screens/hypo_glycemia/hypo_glycemia_yes_insulin/mouth_hypo_glycemia_yes_insulin.dart';
@@ -58,7 +59,8 @@ class MouthStatusWidget extends StatelessWidget {
             return MouthHypoGlycemiaNoInsulin(
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           case MouthProcedureStatus.endocrineConference:
-            return Text('Hội chẩn nội tiết');
+            return EndocrineConferenceScreen(
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
           case MouthProcedureStatus.thirdAsk:
             return ThirdAskScreen(
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);

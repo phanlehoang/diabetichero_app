@@ -5,7 +5,7 @@ class MouthBaseBolusLogic {
   final MouthProcedure mouthProcedure;
 
   MouthBaseBolusLogic(this.mouthProcedure);
-  //lấy ra các MedicalCheckGlucoses của láast regimen
+  //lấy ra các MedicalCheckGlucoses của last regimen
 
   List<MedicalCheckGlucose> get lastRegimenGlucoses {
     if (mouthProcedure.regimens.length == 0) {
@@ -14,6 +14,8 @@ class MouthBaseBolusLogic {
     return mouthProcedure.regimens.last.medicalActions
         .where((element) => element is MedicalCheckGlucose)
         .map((e) => e as MedicalCheckGlucose)
+        .toList()
+        .reversed
         .toList();
   }
 

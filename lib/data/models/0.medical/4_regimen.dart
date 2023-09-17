@@ -1,4 +1,3 @@
-
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -17,10 +16,12 @@ class Regimen extends Equatable {
   String name;
   List<dynamic> medicalActions;
   DateTime beginTime;
+  num evalCounter = 8;
   Regimen({
     required this.name,
     required this.medicalActions,
     required this.beginTime,
+    this.evalCounter = 8,
   });
   //1.1. compare
   //props
@@ -49,6 +50,7 @@ class Regimen extends Equatable {
       'medicalActions': [for (dynamic x in medicalActions) x.toMap()],
       'name': name,
       'beginTime': beginTime,
+      'evalCounter': evalCounter,
     };
   }
 
@@ -61,6 +63,7 @@ class Regimen extends Equatable {
       name: map['name'] != null ? map['name'] : 'Unknown',
       beginTime:
           map['beginTime'] != null ? map['beginTime'].toDate() : DateTime.now(),
+      evalCounter: map['evalCounter'] != null ? map['evalCounter'] : 8,
     );
   }
   //from snapshot
@@ -73,6 +76,7 @@ class Regimen extends Equatable {
       medicalActions: [for (dynamic x in medicalActions) x.clone()],
       name: name,
       beginTime: beginTime,
+      evalCounter: evalCounter,
     );
   }
 

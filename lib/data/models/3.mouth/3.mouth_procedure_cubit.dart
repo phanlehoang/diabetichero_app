@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:diabetichero_app/data/models/0.medical/medical_action/2_medical_check_glucose.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../manager/2_profile.dart';
@@ -59,6 +60,20 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
         });
       } catch (e) {
         print(e);
+      }
+    }
+    //neu la medical check glucose thi update evalCounter
+    if (medicalAction is MedicalCheckGlucose) {
+      //neu eval < 8 thi update evalCounter
+      num evalCounter = state.regimens.last.evalCounter;
+      if (evalCounter < 8) {
+        try {
+          await procedureRef.update({
+            'evalCounter': FieldValue.increment(1),
+          });
+        } catch (e) {
+          print(e);
+        }
       }
     }
   }
