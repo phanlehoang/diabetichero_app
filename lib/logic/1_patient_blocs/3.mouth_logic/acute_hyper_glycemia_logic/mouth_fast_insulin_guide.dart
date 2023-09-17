@@ -50,7 +50,7 @@ class MouthFastInsulinGuide {
           insulinType: InsulinType.Fast,
           time: DateTime.now(),
           insulinUI: 0,
-          // recommendedInsulinUI: 0,
+          recommendedInsulinUI: 0,
         );
       case GlucoseEvaluation.normal:
         bonus = 0;
@@ -71,8 +71,8 @@ class MouthFastInsulinGuide {
       insulinType: InsulinType.Fast,
       time: DateTime.now(),
       insulinUI: insulinUI(mouthProcedure.regimens.last.weight) + bonus,
-      // recommendedInsulinUI:
-      //     insulinUI(mouthProcedure.regimens.last.weight) + bonus,
+      recommendedInsulinUI:
+          insulinUI(mouthProcedure.regimens.last.weight) + bonus,
     );
   }
 

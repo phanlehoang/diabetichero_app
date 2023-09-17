@@ -32,6 +32,7 @@ class MouthTakeFastInsulinBloc extends FormBloc<String, String> {
       final mouthProcedure = mouthProcedureOnlineCubit.state;
       MedicalTakeInsulin medicalTakeInsulin =
           logicGuide.medicalTakeInsulinGuide;
+      // medicalTakeInsulin.recommendedInsulinUI = logicGuide.insulinUI();
       medicalTakeInsulin.insulinUI = num.tryParse(insulinUI.value) != null
           ? num.parse(insulinUI.value)
           : medicalTakeInsulin.insulinUI;
