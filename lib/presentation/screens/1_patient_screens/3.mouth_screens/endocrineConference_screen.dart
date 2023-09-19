@@ -14,20 +14,47 @@ class EndocrineConferenceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('hoi chan noi tiet'),
+        Text('Hội chận nội tiết'),
         //tao nut bam
-        Text('Tiep tuc dieu tri benh nhan'),
+        Text('Tiếp tục điều trị bệnh nhân'),
         SizedBox(
           height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: () {}, child: Text('Co')),
+            ElevatedButton(onPressed: () {}, child: Text('Có')),
             SizedBox(
               width: 20,
             ),
-            ElevatedButton(onPressed: () {}, child: Text('Khong')),
+            ElevatedButton(
+                onPressed: () {
+                  //  hiển thị thông báo :"Kết thúc điều trị bệnh nhân"//
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext) {
+                        return AlertDialog(
+                          title: Text('Kết thúc điều trị bệnh nhân'),
+                          content: Text(
+                              'Bạn có chắc chắn muốn kết thúc điều trị bệnh nhân này không?'),
+                          actions: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  // hiển thị thông báo :"Kết thúc điều trị bệnh nhân"//
+                                  // kết thúc phác đồ
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Có')),
+                            ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Không')),
+                          ],
+                        );
+                      });
+                },
+                child: Text('Không')),
           ],
         ),
       ],
