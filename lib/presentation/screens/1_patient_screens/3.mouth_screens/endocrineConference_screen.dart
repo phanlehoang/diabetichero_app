@@ -1,7 +1,12 @@
 //lam trang hoi chan noi tiet
 import 'package:diabetichero_app/data/models/3.mouth/4.mouth_procedure_online_cubit.dart';
 import 'package:diabetichero_app/data/models/0.medical/medical_action/3_medical_take_insulin.dart';
+import 'package:diabetichero_app/logic/1_patient_blocs/3.mouth_logic/endocrine_conference_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_form_bloc/flutter_form_bloc.dart';
+
+import '../../../widgets/nice_widgets/2_nice_button.dart';
 
 class EndocrineConferenceScreen extends StatelessWidget {
   //them procedure online cubit
@@ -20,43 +25,57 @@ class EndocrineConferenceScreen extends StatelessWidget {
         SizedBox(
           height: 20,
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: () {}, child: Text('Có')),
-            SizedBox(
-              width: 20,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  //  hiển thị thông báo :"Kết thúc điều trị bệnh nhân"//
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext) {
-                        return AlertDialog(
-                          title: Text('Kết thúc điều trị bệnh nhân'),
-                          content: Text(
-                              'Bạn có chắc chắn muốn kết thúc điều trị bệnh nhân này không?'),
-                          actions: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  // hiển thị thông báo :"Kết thúc điều trị bệnh nhân"//
-                                  // kết thúc phác đồ
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Có')),
-                            ElevatedButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text('Không')),
-                          ],
-                        );
-                      });
-                },
-                child: Text('Không')),
-          ],
-        ),
+        // CHo endocrine conference logic bloc vào form bloc
+        // tao nut bam
+        BlocProvider<EndocrineConferenceBloc>(
+            create: (context) => EndocrineConferenceBloc(
+                  mouthProcedureOnlineCubit: mouthProcedureOnlineCubit,
+                ),
+            child: Builder(
+              builder: (context) {
+                final formBloc = context.read<EndocrineConferenceBloc>();
+                return FormBlocListener<EndocrineConferenceBloc, String, String>(
+                  onSubmitting: (context, state) => Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                  //fail
+                  onFailure: (context, state) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('error'),
+                      ),
+                    );
+                  },
+                  onSuccess: (context, state) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('success'),
+                      ),
+                    );
+                  },
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [ 
+                        Text('Tiếp tục điều trị bệnh nhân'),
+                        RadioButtonGroupFieldBlocBuilder(
+                        selectFieldBloc: formBloc.yesNo,
+                        itemBuilder: (context, value) =>
+                        FieldItem(child: Text(value)),
+                        ),
+                        // Thêm button xác nhận
+                        NiceButton(
+                        text: 'Xác nhận',
+                        onTap: () {
+                    formBloc.submit();
+                  },
+                )
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ))
+
       ],
     );
   }

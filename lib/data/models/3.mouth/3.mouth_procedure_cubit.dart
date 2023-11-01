@@ -49,10 +49,25 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
       print(e);
     }
   }
+  Future<void> updateStartingPoint(num startingPoint ) async{
+    DocumentReference? lastRegimenRef = await this.lastRegimenRef;
+    if (lastRegimenRef == null) {
+      
+    } else {
+    try {
+      // update status trên firebase
+      await lastRegimenRef.update(
+        {'startingPoint': startingPoint});
+    } catch (e) {
+      print(e);
+    }
+    }
+  }
 
   Future<void> addMedicalAction(dynamic medicalAction) async {
     DocumentReference? lastRegimenRef = await this.lastRegimenRef;
     if (lastRegimenRef == null) {
+
     } else {
       try {
         await lastRegimenRef.update({
@@ -60,20 +75,6 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
         });
       } catch (e) {
         print(e);
-      }
-    }
-    //neu la medical check glucose thi update evalCounter
-    if (medicalAction is MedicalCheckGlucose) {
-      //neu eval < 8 thi update evalCounter
-      num evalCounter = state.regimens.last.evalCounter;
-      if (evalCounter < 8) {
-        try {
-          await procedureRef.update({
-            'evalCounter': FieldValue.increment(1),
-          });
-        } catch (e) {
-          print(e);
-        }
       }
     }
   }

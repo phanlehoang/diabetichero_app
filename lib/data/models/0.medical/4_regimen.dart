@@ -16,12 +16,14 @@ class Regimen extends Equatable {
   String name;
   List<dynamic> medicalActions;
   DateTime beginTime;
-  num evalCounter = 8;
+  num startingPoint = 0; 
+  MouthProcedureStatus status = MouthProcedureStatus.baseBolus;
   Regimen({
     required this.name,
     required this.medicalActions,
     required this.beginTime,
-    this.evalCounter = 8,
+    this.startingPoint = 0,
+    this.status = MouthProcedureStatus.baseBolus,
   });
   //1.1. compare
   //props
@@ -50,7 +52,8 @@ class Regimen extends Equatable {
       'medicalActions': [for (dynamic x in medicalActions) x.toMap()],
       'name': name,
       'beginTime': beginTime,
-      'evalCounter': evalCounter,
+      'startingPoint': startingPoint,
+      'status' : status 
     };
   }
 
@@ -63,7 +66,8 @@ class Regimen extends Equatable {
       name: map['name'] != null ? map['name'] : 'Unknown',
       beginTime:
           map['beginTime'] != null ? map['beginTime'].toDate() : DateTime.now(),
-      evalCounter: map['evalCounter'] != null ? map['evalCounter'] : 8,
+      startingPoint: map['startingPoint'] != null ? map['startingPoint'] : 0,
+      status: map['status'] != null ? StringToEnum.stringToMouthProcedureStatus(map['status']) : MouthProcedureStatus.baseBolus,  
     );
   }
   //from snapshot
@@ -76,7 +80,8 @@ class Regimen extends Equatable {
       medicalActions: [for (dynamic x in medicalActions) x.clone()],
       name: name,
       beginTime: beginTime,
-      evalCounter: evalCounter,
+      startingPoint:   startingPoint,
+      status: status, 
     );
   }
 

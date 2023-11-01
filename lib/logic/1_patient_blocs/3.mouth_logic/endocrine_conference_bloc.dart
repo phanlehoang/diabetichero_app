@@ -6,7 +6,10 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 
 class EndocrineConferenceBloc extends FormBloc<String, String> {
   final MouthProcedureOnlineCubit mouthProcedureOnlineCubit;
-  final yesNo = BooleanFieldBloc();
+  final yesNo = SelectFieldBloc(
+    items: ['Có', 'Không'],
+  );
+
 
   EndocrineConferenceBloc({required this.mouthProcedureOnlineCubit}) : super() {
     addFieldBlocs(
@@ -20,33 +23,20 @@ class EndocrineConferenceBloc extends FormBloc<String, String> {
   @override
   FutureOr<void> onSubmitting() async {
     //neu yes
-    if (yesNo.value == true) {
+    if (yesNo.value == 'Có') {
       //b1: update medicalTakeInsulin
       final mouthProcedure = mouthProcedureOnlineCubit.state;
       //lay ra cai regimen last
       final lastRegimen = mouthProcedure.regimens.last;
-      //if name is AcuteHyperglycemia
-      if (lastRegimen.name == 'Acute Hyper Glycemia') {
-        //b2: update database
-        //update procedure status
-        mouthProcedureOnlineCubit
-            .updateProcedureStatus(MouthProcedureStatus.acuteHyperglycemia);
-        await mouthProcedureOnlineCubit
-            .addMedicalAction(lastRegimen.medicalActions.last);
-        //b3: update UI
-        emitSuccess();
-      } else if (lastRegimen.name == 'Hypo Glycemia') {
-        //b2: update database
-        //update procedure status
-        mouthProcedureOnlineCubit
-            .updateProcedureStatus(MouthProcedureStatus.hypoGlycemia);
-        await mouthProcedureOnlineCubit
-            .addMedicalAction(lastRegimen.medicalActions.last);
-        //b3: update UI
-        emitSuccess();
-      } else if (lastRegimen.name == 'Phác đồ nội trú') {
-        emitFailure();
-      }
+      // Cập nhật trạng thái MouthProcedure Online Cubit
+      dynamic lastStatus = mouthProcedure.regimens.last.status;
+      // Sửa startingPointonline trên firebase
+
+      mouthProcedure.regimens.last.startingPoint = lastRegimen.medicalActions.length ;
+
+      // cập nhật trạng thái
+      mouthProcedureOnlineCubit.updateProcedureStatus(lastStatus);      
+
     } else {
       emitSuccess();
     }

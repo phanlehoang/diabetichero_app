@@ -21,9 +21,17 @@ class MouthBaseBolusLogic {
 
   bool get isFull50 {
     int counter = 0;
-    for (MedicalCheckGlucose x in lastRegimenGlucoses) {
-      if (x.glucoseUI > 10 || x.glucoseUI < 4) counter++;
+    num startingPoint = mouthProcedure.regimens.last.startingPoint; 
+    num distance = lastRegimenGlucoses.length - startingPoint; 
+    if (distance >= 8) {
+        startingPoint = lastRegimenGlucoses.length - 8;
+      }
+        for(int y = startingPoint.toInt(); y < lastRegimenGlucoses.length; y++){
+          num glucoseUI = lastRegimenGlucoses[y].glucoseUI; 
+        if (glucoseUI > 10 || glucoseUI < 4) counter++;
     }
-    return counter >= 4;
+    return counter >= 4; 
+    
   }
+  
 }

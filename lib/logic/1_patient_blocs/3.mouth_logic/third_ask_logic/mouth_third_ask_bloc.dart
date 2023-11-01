@@ -35,7 +35,7 @@ class ChronicDibatesYesOrNoInsulinBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.thirdAsk,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);
@@ -51,7 +51,7 @@ class ChronicDibatesYesOrNoInsulinBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.thirdAsk,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);
