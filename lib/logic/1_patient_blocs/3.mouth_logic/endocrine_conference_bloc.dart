@@ -19,26 +19,32 @@ class EndocrineConferenceBloc extends FormBloc<String, String> {
     );
   }
   //2 lua chon co hoac khong
+@override
+FutureOr<void> onSubmitting() async {
+  // Nếu yes
+  if (yesNo.value == 'Có') {
+    // B1: Lấy thông tin regimen cuối cùng từ Cubit
+    final mouthProcedure = mouthProcedureOnlineCubit.state;
+    final lastRegimen = mouthProcedure.regimens.last;
 
-  @override
-  FutureOr<void> onSubmitting() async {
-    //neu yes
-    if (yesNo.value == 'Có') {
-      //b1: update medicalTakeInsulin
-      final mouthProcedure = mouthProcedureOnlineCubit.state;
-      //lay ra cai regimen last
-      final lastRegimen = mouthProcedure.regimens.last;
-      // Cập nhật trạng thái MouthProcedure Online Cubit
-      dynamic lastStatus = mouthProcedure.regimens.last.status;
-      // Sửa startingPointonline trên firebase
+    // B2: Tính toán startingPoint mới
+    final startingPoint = lastRegimen.medicalActions.length;
 
-      mouthProcedure.regimens.last.startingPoint = lastRegimen.medicalActions.length ;
+    // B3: Cập nhật startingPoint và trạng thái qua Cubit
+    // Đảm bảo rằng mouthProcedureOnlineCubit có phương thức để cập nhật startingPoint
+    await mouthProcedureOnlineCubit.updateStartingPoint(startingPoint);
 
-      // cập nhật trạng thái
-      mouthProcedureOnlineCubit.updateProcedureStatus(lastStatus);      
+    // B4: Nếu cần thiết, cập nhật trạng thái
+    final lastStatus = lastRegimen.status ?? MouthProcedureStatus.baseBolus; // Giả sử trạng thái mặc định
+    await mouthProcedureOnlineCubit.updateProcedureStatus(lastStatus);
 
-    } else {
-      emitSuccess();
-    }
+    // B5: Thông báo thành công cho FormBloc để hoàn tất quy trình
+    emitSuccess(canSubmitAgain: true); // canSubmitAgain có thể được set thành true hoặc false tùy vào logic của bạn
+  } else {
+    // Nếu không, thông báo thành công mà không cần thực hiện thay đổi nào
+    emitSuccess(canSubmitAgain: false);
   }
 }
+
+}
+

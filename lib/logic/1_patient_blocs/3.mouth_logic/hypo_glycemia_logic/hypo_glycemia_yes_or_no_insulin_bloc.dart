@@ -36,7 +36,7 @@ class HypoGlycemiaYesOrNoInsulinBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.hypoGlycemiaYesInsulin ,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);
@@ -53,7 +53,7 @@ class HypoGlycemiaYesOrNoInsulinBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.hypoGlycemiaNoInsulin,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);

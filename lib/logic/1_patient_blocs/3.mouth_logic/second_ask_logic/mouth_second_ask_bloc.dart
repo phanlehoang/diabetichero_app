@@ -80,7 +80,7 @@ class MouthSecondAskBloc extends FormBloc<String, String> {
         weight: mouthProcedureOnlineCubit.profile.weight,
         symptoms: hypoGlycemiaCheck.toMap(),
         medicalActions: [],
-        healthConditions: [],
+        healthConditions: [], status: MouthProcedureStatus.hypoGlycemia ,
       );
       //b2: gửi regimen acute hyper glycemia lên server
       mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);

@@ -1,5 +1,6 @@
 {
     "java.configuration.updateBuildConfiguration": "interactive",
     "FSharp.suggestGitignore": false,
-    "cmake.sourceDirectory": "C:/Users/HoangPhanHoang/OneDrive/Desktop/hoang/diabetichero_app/linux"
+    "cmake.sourceDirectory": "C:/Users/HoangPhanHoang/OneDrive/Desktop/hoang/diabetichero_app/linux",
+    "cmake.configureOnOpen": false
 }

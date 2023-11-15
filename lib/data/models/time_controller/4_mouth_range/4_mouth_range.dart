@@ -7,7 +7,7 @@ class MouthSlowInsulinRange extends MedicalRange {
       : super(ranges: [
           //4 khung gio
           //21h30 - 22h30
-          Range(HourMinute(21, 00), HourMinute(23, 00)),
+          Range(HourMinute(20, 30), HourMinute(23, 00)),
         ]);
   //waiting message
   @override

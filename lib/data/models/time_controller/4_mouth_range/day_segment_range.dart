@@ -10,9 +10,9 @@ class DaySegmentRange extends MedicalRange {
           //bữa trưa
           Range(HourMinute(10, 00), HourMinute(13, 00)),
           //bữa chiều
-          Range(HourMinute(17, 00), HourMinute(21, 00)),
+          Range(HourMinute(17, 00), HourMinute(20, 00)),
           //21h - 23h
-          Range(HourMinute(21, 00), HourMinute(23, 00)),
+          Range(HourMinute(20, 30), HourMinute(23, 00)),
         ]);
   //waiting message
   @override

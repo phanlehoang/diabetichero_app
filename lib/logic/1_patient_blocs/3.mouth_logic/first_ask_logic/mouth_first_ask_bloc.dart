@@ -59,6 +59,7 @@ class MouthFirstAskBloc extends FormBloc<String, String> {
       if (acuteHyperGlycemiaCheck.isAcuteHyperGlycemia) {
         //b1: tạo regimen acute hyper glycemia
         MouthRegimen mouthRegimen = MouthRegimen(
+          status:MouthProcedureStatus.acuteHyperglycemia,
           name: 'acuteHyperglycemia',
           beginTime: DateTime.now(),
           weight: mouthProcedureOnlineCubit.profile.weight,

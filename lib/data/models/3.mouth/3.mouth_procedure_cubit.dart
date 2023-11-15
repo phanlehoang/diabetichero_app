@@ -42,27 +42,47 @@ class MouthProcedureCubit extends Cubit<MouthProcedure> {
   }
 
   Future<void> addMouthRegimen(MouthRegimen regimen) async {
-    CollectionReference regimensRef = procedureRef.collection('regimens');
+    CollectionReference regimensRef = procedureRef.collection(
+      'regimens');
     try {
-      await regimensRef.doc(regimen.beginTime.toString()).set(regimen.toMap());
+      await regimensRef.doc(regimen.beginTime.toString())
+      .set(regimen.toMap());
     } catch (e) {
       print(e);
     }
   }
-  Future<void> updateStartingPoint(num startingPoint ) async{
-    DocumentReference? lastRegimenRef = await this.lastRegimenRef;
-    if (lastRegimenRef == null) {
-      
-    } else {
-    try {
-      // update status trên firebase
-      await lastRegimenRef.update(
-        {'startingPoint': startingPoint});
-    } catch (e) {
-      print(e);
-    }
-    }
+  Future<void> updateStartingPoint(int startingPoint) async {
+  DocumentReference? lastRegimenRef = await this.lastRegimenRef;
+  if (lastRegimenRef == null) {
+    print("Không tìm thấy regimen cuối cùng.");
+    return;
   }
+
+  try {
+    // Lấy thông tin về regimen cuối cùng.
+    DocumentSnapshot lastRegimenSnapshot = await lastRegimenRef.get();
+    Map<String, dynamic> lastRegimenData = lastRegimenSnapshot.data() as Map<String, dynamic>;
+    List<dynamic> medicalActions = lastRegimenData['medicalActions'];
+
+    // Tìm lần kiểm tra đường huyết cuối cùng và cập nhật 'startingPoint'.
+    int startingPoint = medicalActions.length; // Mặc định là cuối cùng nếu không tìm thấy kiểm tra đường huyết nào.
+    for (int i = medicalActions.length - 1; i >= 0; i--) {
+      var action = medicalActions[i];
+      if (action['type'] == 'checkGlucose') { // Giả định 'type' là trường được sử dụng để xác định kiểu của hành động y tế.
+        startingPoint = i; // Cập nhật 'startingPoint' với chỉ số của kiểm tra đường huyết cuối cùng.
+        break;
+      }
+    }
+
+    // Cập nhật 'startingPoint' trong Firestore.
+    await lastRegimenRef.update({'startingPoint': startingPoint});
+    print("Starting point đã được cập nhật: $startingPoint");
+  } catch (e) {
+    print("Lỗi khi cập nhật starting point: $e");
+  }
+}
+
+
 
   Future<void> addMedicalAction(dynamic medicalAction) async {
     DocumentReference? lastRegimenRef = await this.lastRegimenRef;

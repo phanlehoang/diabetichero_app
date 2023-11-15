@@ -10,7 +10,7 @@ class MouthMealRange extends MedicalRange {
           //bữa trưa
           Range(HourMinute(10, 00), HourMinute(13, 00)),
           //bữa tối
-          Range(HourMinute(17, 00), HourMinute(21, 00)),
+          Range(HourMinute(17, 00), HourMinute(20, 00)),
         ]);
   //waiting message
   @override

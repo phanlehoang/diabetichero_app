@@ -75,7 +75,11 @@ class MouthStatusWidget extends StatelessWidget {
                 currentRangeCubit:
                     RangeCubit(DaySegmentRange().rangeContain(DateTime.now())),
                 mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
-
+          case MouthProcedureStatus.baseBolus:
+            return MouthFirstAskWidget(
+                mouthProcedureOnlineCubit: mouthProcedureOnlineCubit);
+          case MouthProcedureStatus.finish:
+            return Container();
           default:
             return Text('chua lam');
         }

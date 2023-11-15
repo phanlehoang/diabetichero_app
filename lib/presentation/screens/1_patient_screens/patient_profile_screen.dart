@@ -19,50 +19,52 @@ class PatientProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: PatientNavigatorBar(),
+        // Các thông tin của AppBar
+         flexibleSpace: PatientNavigatorBar(),
       ),
-      // Tạo tên, tuổi, cân nặng, chiều cao của bệnh nhân, TextSize: 20, Thêm khoảng trắng ở giữa
       body: NiceInternetScreen(
         child: BlocBuilder<CurrentProfileCubit, Profile>(
           builder: (context, profileState) {
-            return Container(
+            return SingleChildScrollView(
               child: Column(
-                //thụt vào bên trái
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Tên: ${profileState.name} ',
-                    style: TextStyle(fontSize: 20),
+                  CircleAvatar(
+                    radius: 50,
+                    // Hiển thị ảnh đại diện của bệnh nhân
+                    backgroundColor:  Colors.blue,
+                    backgroundImage: Image.asset("assets/images/gentle_girl.jpg").image,),           
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        _buildInfoCard('Tên', profileState.name, Icons.person),
+                        _buildInfoCard('Ngày sinh', shortBirthday(profileState.birthday), Icons.cake),
+                        _buildInfoCard('Cân nặng', '${profileState.weight} kg', Icons.monitor_weight),
+                        _buildInfoCard('Chiều cao', '${profileState.height} cm', Icons.height),
+                        // Thêm các thông tin khác theo cùng một mẫu nếu cần
+                      ],
+                    ),
                   ),
-                  Text(
-                    'Ngày sinh: ${shortBirthday(profileState.birthday)}',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    'Cân nặng:${profileState.weight} ',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    'Chiều cao: ${profileState.height}',
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  //currentProcedureId
-
-                  // Tạo nút để thêm thông tin bệnh nhân
                 ],
               ),
             );
           },
         ),
       ),
-
       bottomNavigationBar: BottomNavigatorBar(),
     );
   }
+
+  Widget _buildInfoCard(String title, String data, IconData icon) {
+    return Card(
+      child: ListTile(
+        leading: Icon(icon),
+        title: Text('$title: $data', style: TextStyle(fontSize: 20)),
+      ),
+    );
+  }
 }
+
 
 String shortBirthday(DateTime birthday) {
   String day = birthday.day.toString();

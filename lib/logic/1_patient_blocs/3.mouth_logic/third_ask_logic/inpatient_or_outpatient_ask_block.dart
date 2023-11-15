@@ -35,7 +35,7 @@ class InpatientOrOutpatientAskBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.inpatient,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);
@@ -51,7 +51,7 @@ class InpatientOrOutpatientAskBloc extends FormBloc<String, String> {
             weight: mouthProcedureOnlineCubit.profile.weight,
             symptoms: {},
             medicalActions: [],
-            healthConditions: [],
+            healthConditions: [], status: MouthProcedureStatus.outpatient,
           );
           //b2: gửi regimen acute hyper glycemia lên server
           mouthProcedureOnlineCubit.addMouthRegimen(mouthRegimen);

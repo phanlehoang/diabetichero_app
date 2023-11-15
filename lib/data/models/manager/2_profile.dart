@@ -31,6 +31,8 @@ class Profile {
     this.procedureType = ProcedureType.Unknown,
     required this.room,
   });
+
+  
   //toMap
   Map<String, dynamic> toMap() {
     return {

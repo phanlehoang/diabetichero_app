@@ -19,9 +19,8 @@ class EndocrineConferenceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Hội chận nội tiết'),
+        Text('Hội chẩn nội tiết'),
         //tao nut bam
-        Text('Tiếp tục điều trị bệnh nhân'),
         SizedBox(
           height: 20,
         ),

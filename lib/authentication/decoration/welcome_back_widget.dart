@@ -10,7 +10,7 @@ class WelcomeBackWidget extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(bottom: 20),
       child: Text(
-        " Chào mừng quay trở lại!",
+        "Chào mừng đến với phòng  khám của bạn! ",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,
